@@ -404,7 +404,7 @@ p{ margin:0; text-wrap:pretty; }
   --accent2:#FF5A00; --accent2-ink:#C24300; --accent2-soft:rgba(255,90,0,.10);
   --dark:#131517; --dark-text:#F2F4F5; --dark-muted:#A2A9AE; --stat1:#19C6D6; --stat2:#FFFFFF;
   --foot:#0B0C0D; --foot-text:#B0B6BA; --foot-muted:#7A8186;
-  --s1:#D6F3F6; --s2:#ECEDED; --s3:#FFE5D6; --s4:#ECEDED; --stub:#EFF9FA; --tint:8,12,14; --stamp-sec:#E7EAEB;
+  --s1:#D6F3F6; --s2:#ECEDED; --s3:#FFE5D6; --s4:#ECEDED; --stub:#EFF9FA; --tint:8,12,14; --stamp-sec:#ECECEB;
 }
 /* Хвоя: глубокий еловый вместо чёрного, оранжевый акцент */
 [data-pal="forest"]{
@@ -1304,8 +1304,8 @@ h1, h2, h3, .stat__num, .pass__city, .mnav a, .hd__logo b{ font-family:var(--fon
    кнопки, цифры, иконки и фирменная дорога. Без «листов», наклонов,
    перфорации, штрихкодов и билетов. Один тип первого экрана — фото во всю ширину.
    ===================================================================== */
-[data-pal="g-teal"]{ --ink:#1F2F38; --ink-rgb:31,47,56; --ink-2:#56666E; --line:rgba(31,47,56,.12); --soft:#F3F6F6; --paper:#F3F6F6;
-  --fill:#0A8F9C; --fill-d:#077985; --dark:#F3F6F6; --navy-t:#1F2F38; --navy-t2:#56666E; --foot:#F3F6F6; --foot-text:#56666E; --foot-muted:#7C8A90; }
+[data-pal="g-teal"]{ --ink:#1F2F38; --ink-rgb:31,47,56; --ink-2:#56666E; --line:rgba(31,47,56,.12); --soft:#F4F4F3; --paper:#F4F4F3;
+  --fill:#0A8F9C; --fill-d:#077985; --dark:#F4F4F3; --navy-t:#1F2F38; --navy-t2:#56666E; --foot:#F4F4F3; --foot-text:#56666E; --foot-muted:#7C8A90; }
 body{ background:#fff; color:var(--ink); }
 
 /* ---- секции: ровные полосы, без скруглённых «листов» ---- */
@@ -1574,7 +1574,7 @@ body{ font-size:1rem; }
 /* ---- возвращаем 3D в карточках туров, фон секций и контакты ---- */
 .stamp__img--cut{ background:#ECEDED; }
 .stamp__img--cut img{ object-fit:contain; width:82%; height:82%; }
-.sec--ink, .sec--sky, .sec--sand, .sec--order, .sec--show{ background:#F3F6F6 !important; }
+.sec--ink, .sec--sky, .sec--sand, .sec--order, .sec--show{ background:#F4F4F3 !important; }
 .pass{ --pb:var(--fill); }
 .pass__top, .pass:nth-child(1) .pass__top, .pass:nth-child(2) .pass__top, .pass:nth-child(3) .pass__top{ background:#fff !important; color:var(--ink) !important; }
 .pass{ background:#fff !important; border:1px solid var(--line) !important; border-top:4px solid var(--fill) !important; border-radius:16px !important; -webkit-mask:none !important; mask:none !important; }
@@ -1595,7 +1595,7 @@ b, strong, small, .stat__num, .yrs__y, .reel__no, .offer__no, .board__no, .board
 
 /* ---- контакты: спокойные серые карточки ---- */
 .passes{ counter-reset:pass; }
-.pass{ counter-increment:pass; background:#F3F6F6 !important; border:0 !important; border-radius:20px !important; padding:2rem 2rem 1.5rem; box-shadow:none !important; }
+.pass{ counter-increment:pass; background:#F4F4F3 !important; border:0 !important; border-radius:20px !important; padding:2rem 2rem 1.5rem; box-shadow:none !important; }
 .pass:hover{ transform:none; }
 .pass__top, .pass:nth-child(n) .pass__top{ background:transparent !important; padding:0 0 1.5rem !important; display:flex; align-items:baseline; justify-content:space-between; }
 .pass__top::after{ content:'0' counter(pass); font-size:.875rem; font-weight:500; color:var(--ink-2); letter-spacing:.04em; }
@@ -1607,11 +1607,11 @@ b, strong, small, .stat__num, .yrs__y, .reel__no, .offer__no, .board__no, .board
 .pass dd:last-child{ padding-bottom:0; }
 
 /* ---- форма: поля без обводки, мягкий серый фон ---- */
-.f input[type=text], .f input[type=tel], .f input, .f textarea, .f select{ border:0 !important; background:#F3F6F6; box-shadow:none; }
+.f input[type=text], .f input[type=tel], .f input, .f textarea, .f select{ border:0 !important; background:#F4F4F3; box-shadow:none; }
 .f input:focus{ background:#fff; box-shadow:inset 0 0 0 1px var(--ink); }
-.seg label{ border:0 !important; background:#F3F6F6; }
+.seg label{ border:0 !important; background:#F4F4F3; }
 .seg input:checked + label{ background:var(--ink); color:#fff; }
-.stepper button{ border:0 !important; background:#F3F6F6; }
+.stepper button{ border:0 !important; background:#F4F4F3; }
 
 /* плашка-примечание на сером фоне секции — белая, чтобы не сливалась */
 .sec--sky .note, .sec--sand .note, .sec--ink .note, .sec--order .note{ background:#fff; border-radius:20px; padding:clamp(1.5rem,3vw,2.5rem); }
@@ -1619,3 +1619,26 @@ b, strong, small, .stat__num, .yrs__y, .reel__no, .offer__no, .board__no, .board
 /* корпоративный транспорт: ночное фото светлее, без затемняющего градиента */
 .hero--corp .hero__bg img{ filter:brightness(1.55) contrast(.92) saturate(1.1); }
 .hero--corp::before{ background:linear-gradient(90deg, rgba(10,22,28,.28) 0%, rgba(10,22,28,.1) 40%, rgba(10,22,28,0) 62%); }
+
+/* ---- контакты: билетики с цветной шапкой и вырезами (цвета из палитры сайта) ---- */
+.pass{ --pb:#0A8F9C; } .pass:nth-child(2){ --pb:#1F2F38; } .pass:nth-child(3){ --pb:#2D6F8E; }
+.pass{ background:#F4F4F3 !important; border:0 !important; border-radius:20px !important; padding:0 !important; overflow:hidden; }
+.pass__top, .pass:nth-child(n) .pass__top{ background:var(--pb) !important; color:#fff !important; padding:1.4rem 1.75rem !important; margin-bottom:1.25rem; align-items:center; justify-content:space-between;
+  -webkit-mask:radial-gradient(circle 10px at 0 100%,#0000 97%,#000) left/51% 100% no-repeat, radial-gradient(circle 10px at 100% 100%,#0000 97%,#000) right/51% 100% no-repeat;
+          mask:radial-gradient(circle 10px at 0 100%,#0000 97%,#000) left/51% 100% no-repeat, radial-gradient(circle 10px at 100% 100%,#0000 97%,#000) right/51% 100% no-repeat; }
+.pass__top::after{ content:none; }
+.pass__city, .pass__top .pass__city{ color:#fff !important; font-size:clamp(1.375rem,1.8vw,1.625rem); font-weight:600; }
+.pass__bus{ display:block !important; }
+.pass__bus .bus-ico{ width:3rem; height:auto; }
+.pass dl{ padding:0 1.75rem 1.5rem !important; }
+
+/* ---- туры: рамки как у фотографий (белое поле, лёгкий наклон, тень), подложка нейтральная ---- */
+.stamp, .stamp.rv.in{ transform:rotate(var(--r)) !important; transition:transform .5s var(--spring); }
+.stamp:hover{ transform:rotate(0) translateY(-6px) !important; }
+.stamp__frame{ -webkit-mask:none !important; mask:none !important; padding:.75rem !important; background:#fff !important; border-radius:6px !important; overflow:visible !important;
+  filter:none !important; box-shadow:0 1px 2px rgba(var(--ink-rgb),.08), 0 22px 40px -22px rgba(var(--ink-rgb),.4); margin-bottom:1.1rem; }
+.stamp__img{ border-radius:3px; overflow:hidden; background:#ECEDED; }
+
+/* ---- отзывы: карточки-подложки под фото и текстом ---- */
+.review, .review.rv.in{ background:#F4F4F3 !important; box-shadow:0 1px 2px rgba(var(--ink-rgb),.08), 0 22px 40px -22px rgba(var(--ink-rgb),.35) !important; border:0 !important; border-radius:10px !important; padding:.9rem .9rem 1.4rem !important; }
+.review__photo{ border-radius:4px; }
