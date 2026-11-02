@@ -1605,3 +1605,17 @@ b, strong, small, .stat__num, .yrs__y, .reel__no, .offer__no, .board__no, .board
 .pass dd{ font-weight:500; font-size:1rem; padding-bottom:1rem; }
 .pass dd a{ font-weight:500; font-size:1rem; min-height:2rem; line-height:2rem; }
 .pass dd:last-child{ padding-bottom:0; }
+
+/* ---- форма: поля без обводки, мягкий серый фон ---- */
+.f input[type=text], .f input[type=tel], .f input, .f textarea, .f select{ border:0 !important; background:#F3F6F6; box-shadow:none; }
+.f input:focus{ background:#fff; box-shadow:inset 0 0 0 1px var(--ink); }
+.seg label{ border:0 !important; background:#F3F6F6; }
+.seg input:checked + label{ background:var(--ink); color:#fff; }
+.stepper button{ border:0 !important; background:#F3F6F6; }
+
+/* плашка-примечание на сером фоне секции — белая, чтобы не сливалась */
+.sec--sky .note, .sec--sand .note, .sec--ink .note, .sec--order .note{ background:#fff; border-radius:20px; padding:clamp(1.5rem,3vw,2.5rem); }
+
+/* корпоративный транспорт: ночное фото светлее, без затемняющего градиента */
+.hero--corp .hero__bg img{ filter:brightness(1.55) contrast(.92) saturate(1.1); }
+.hero--corp::before{ background:linear-gradient(90deg, rgba(10,22,28,.28) 0%, rgba(10,22,28,.1) 40%, rgba(10,22,28,0) 62%); }
