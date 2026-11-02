@@ -27,6 +27,7 @@
       });
       initPage();
       if (!r.el) window.scrollTo(0, 0);
+      window.dispatchEvent(new Event('resize'));
     }
     if (r.el && !first) r.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     else if (r.el) r.el.scrollIntoView();

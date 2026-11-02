@@ -56,10 +56,40 @@
 <section class="sec sec--ink"><div class="wrap"><h2 class="h2 rv ">Почему выбирают нас</h2><div class="stats"><div class="stat rv"><div class="stat__head"><span class="stat__num" data-num="25+">25+</span><span class="stat__lbl">лет</span></div><p>Работаем на&nbsp;рынке туризма с&nbsp;1997&nbsp;года</p></div><div class="stat rv"><div class="stat__head"><span class="stat__num" data-num="1000+">1000+</span><span class="stat__lbl">туров</span></div><p>Организовали поездки по&nbsp;России и&nbsp;за рубеж</p></div><div class="stat rv"><div class="stat__head"><span class="stat__num" data-num="17–55">17–55</span><span class="stat__lbl">мест</span></div><p>Автобусы и&nbsp;микроавтобусы под группу любого размера</p></div><div class="stat rv"><div class="stat__head"><span class="stat__num" data-num="10 000+">10 000+</span><span class="stat__lbl">клиентов</span></div><p>Нам доверяют школьные и&nbsp;взрослые группы</p></div></div>
   <a class="btn btn--orange btn--lg rv" href="#заявка">Оставить заявку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></section>
 
-<section class="sec sec--route"><div class="wrap"><h2 class="h2 rv ">Наша история</h2>
-  <div class="route"><svg class="route__line" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 150 10, 250 110, 400 60 S 650 10, 800 60 S 1050 110, 1200 60"/></svg>
-  <span class="route__bus" aria-hidden="true"><svg class="bus-ico" viewBox="0 0 64 40" aria-hidden="true"><rect x="2" y="4" width="56" height="26" rx="7" style="fill:var(--accent)"/><rect x="8" y="9" width="10" height="9" rx="2" fill="#fff"/><rect x="21" y="9" width="10" height="9" rx="2" fill="#fff"/><rect x="34" y="9" width="10" height="9" rx="2" fill="#fff"/><rect x="47" y="9" width="8" height="13" rx="2" style="fill:var(--ink)"/><circle cx="16" cy="31" r="5" style="fill:var(--ink)"/><circle cx="16" cy="31" r="2" fill="#fff"/><circle cx="46" cy="31" r="5" style="fill:var(--ink)"/><circle cx="46" cy="31" r="2" fill="#fff"/></svg></span>
-  <ol class="route__stops"><li class="rv"><span class="yr">1997 год</span><p>Открыли компанию и&nbsp;начали работу на&nbsp;рынке туристических услуг</p></li><li class="rv"><span class="yr">2005 год</span><p>Расширили маршруты и&nbsp;выстроили контакты с&nbsp;надёжными туроператорами</p></li><li class="rv"><span class="yr">2012 год</span><p>Запустили школьные программы с&nbsp;безопасным сопровождением</p></li><li class="rv"><span class="yr">2018 год</span><p>Развили направление автобусных туров, деловых поездок и&nbsp;обучающих экскурсий</p></li><li class="rv"><span class="yr">2026 год</span><p>Продолжаем расти: с&nbsp;каждым годом всё больше довольных клиентов и&nbsp;новых маршрутов</p></li></ol></div></div></section>
+<section class="rt-story" id="история" aria-label="Наша история">
+  <div class="rt-story__stage">
+    <h2 class="h2 rt-story__title">Наша история</h2>
+
+        <div class="rt-scene rt-scene--snow" data-step="0" aria-hidden="true"><div class="rt-scene__side rt-scene__side--l"></div><div class="rt-scene__side rt-scene__side--r"></div></div>
+    <div class="rt-scene rt-scene--forest" data-step="1" aria-hidden="true"><div class="rt-scene__side rt-scene__side--l"></div><div class="rt-scene__side rt-scene__side--r"></div></div>
+    <div class="rt-scene rt-scene--steppe" data-step="2" aria-hidden="true"><div class="rt-scene__side rt-scene__side--l"></div><div class="rt-scene__side rt-scene__side--r"></div></div>
+    <div class="rt-scene rt-scene--mountains" data-step="3" aria-hidden="true"><div class="rt-scene__side rt-scene__side--l"></div><div class="rt-scene__side rt-scene__side--r"></div></div>
+    <div class="rt-scene rt-scene--sea" data-step="4" aria-hidden="true"><div class="rt-scene__side rt-scene__side--l"></div><div class="rt-scene__side rt-scene__side--r"></div></div>
+    <div class="rt-story__grid">
+      <div class="rt-story__texts">
+        <div class="rt-story__count"><b id="rtStoryNum">01</b> / 05</div>
+        <p class="rt-story__text is-active"><span class="yr">1997 год</span>Открыли компанию и&nbsp;начали работу на&nbsp;рынке туристических услуг</p>
+        <p class="rt-story__text"><span class="yr">2005 год</span>Расширили маршруты и&nbsp;выстроили контакты с&nbsp;надёжными туроператорами</p>
+        <p class="rt-story__text"><span class="yr">2012 год</span>Запустили школьные программы с&nbsp;безопасным сопровождением</p>
+        <p class="rt-story__text"><span class="yr">2018 год</span>Развили направление автобусных туров, деловых поездок и&nbsp;обучающих экскурсий</p>
+        <p class="rt-story__text"><span class="yr">2026 год</span>Продолжаем расти: с&nbsp;каждым годом всё больше довольных клиентов и&nbsp;новых маршрутов</p>
+      </div>
+      <svg class="rt-story__route" id="rtRoute" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <path id="rtRoutePath" d="M200,30 C340,110 340,230 200,310 C60,390 60,510 200,590 C340,670 340,730 200,775" fill="none" stroke="#121416" stroke-opacity=".35" stroke-width="2.5" stroke-dasharray="9 9" stroke-linecap="round"/>
+        <path id="rtRouteDone" d="M200,30 C340,110 340,230 200,310 C60,390 60,510 200,590 C340,670 340,730 200,775" fill="none" stroke="#0A8F9C" stroke-width="3" stroke-dasharray="0 9999" stroke-linecap="round"/>
+        <g id="rtDots"></g>
+        <g id="rtBus">
+          <g transform="translate(-24,-13)">
+            <rect width="48" height="24" rx="6" fill="#19C6D6"/>
+            <rect x="5" y="5" width="9" height="8" rx="2" fill="#fff"/><rect x="17" y="5" width="9" height="8" rx="2" fill="#fff"/><rect x="29" y="5" width="9" height="8" rx="2" fill="#fff"/>
+            <rect x="40" y="5" width="5" height="10" rx="2" fill="#121416"/>
+            <circle cx="12" cy="25" r="4.5" fill="#121416"/><circle cx="36" cy="25" r="4.5" fill="#121416"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
 
 <section class="sec sec--sky"><div class="wrap"><h2 class="h2 rv ">Популярные туры</h2><div class="stamps"><a class="stamp rv" href="#bustour" style="--r:-3deg">
     <div class="stamp__frame"><div class="stamp__img"><img src="images/tilda/tild6330-6530-4261-b232-323137663135/edbced69c6602387ebf4.webp" alt="" loading="lazy"></div><span class="stamp__val">01</span></div>
@@ -271,5 +301,407 @@
 </footer>
 <a class="fab" href="tel:+79038110783"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z"/></svg><span>Позвонить</span></a>
 <script src="alt.js?v=1793113333"></script>
+<script>
+(function(){
+  var sec=document.getElementById('история'); if(!sec) return;
+  var NS='http://www.w3.org/2000/svg';
+  var path=document.getElementById('rtRoutePath'), done=document.getElementById('rtRouteDone'), bus=document.getElementById('rtBus'), dotsG=document.getElementById('rtDots');
+  var texts=sec.querySelectorAll('.rt-story__text'), scenes=sec.querySelectorAll('.rt-scene'), num=document.getElementById('rtStoryNum');
+  var L=path.getTotalLength(), stops=[], dots=[];
+  bus.style.transition='opacity .5s ease'; done.style.transition='opacity .5s ease';
+  (function(){var n=scenes.length||1; for(var i=0;i<n;i++) stops.push((i+.5)/n);})();
+  stops.forEach(function(t){var p=path.getPointAtLength(L*t),c=document.createElementNS(NS,'circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',8);c.setAttribute('fill','#B8C4C7');dotsG.appendChild(c);dots.push(c)});
+
+  function el(p,n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+  function stop(g,o,c,op){el(g,'stop',{offset:o,'stop-color':c,'stop-opacity':op==null?1:op})}
+  function mk(w,h,uid){var v=document.createElementNS(NS,'svg');v.setAttribute('viewBox','0 0 '+w+' '+h);v.setAttribute('preserveAspectRatio','xMidYMax meet');v.style.cssText='width:100%;height:100%;display:block;overflow:visible';
+    var d=el(v,'defs',{});
+    var lg=function(id,stops,x2,y2){var g=el(d,'linearGradient',{id:id+uid,x1:0,y1:0,x2:x2,y2:y2});stops.forEach(function(s){stop(g,s[0],s[1],s[2])})};
+    lg('pn',[[0,'#9CCBAA'],[.55,'#5F9A7C'],[1,'#3F7058']],1,0);          // ближние ёлки: свет слева, тень справа
+    lg('pm',[[0,'#B5D6BF'],[1,'#6FA487']],1,0);                           // средний план
+    lg('pf',[[0,'#D3E6D8'],[1,'#98BFA7']],1,0);                           // дальний план
+    lg('cl',[[0,'#FFFFFF'],[.65,'#F7F9FB'],[1,'#DCE4EA']],0,1);           // облака: объём сверху вниз
+    lg('mt',[[0,'#C9D6E2'],[1,'#8FA4BA']],1,0);
+    lg('fog',[[0,'#ECECEC',0],[1,'#ECECEC',.95]],0,1);
+    lg('sea',[[0,'#B7E2EC'],[.45,'#8FD2E2'],[1,'#5FBBD1']],0,1);
+    lg('sw',[[0,'#FFFFFF'],[.5,'#E6F0F3'],[1,'#BFD4DD']],1,0);          // ближние заснеженные ёлки
+    lg('swm',[[0,'#FFFFFF'],[1,'#D2E1E7']],1,0);                         // средний план зимой
+    lg('swf',[[0,'#FDFEFE'],[1,'#DFEAEE']],1,0);                         // дальний план зимой
+    lg('st1',[[0,'#F1F5E6'],[1,'#DCE8C2']],0,1);
+    lg('st2',[[0,'#DCE9BC'],[1,'#B9D292']],0,1);
+    lg('st3',[[0,'#C2D896'],[1,'#94B96E']],0,1);
+    lg('bs2',[[0,'#DCECBE'],[1,'#A9C97E']],1,0);
+    lg('sd',[[0,'#F7F0E0'],[1,'#E0CBA0']],0,1);                        // ближний песок
+    lg('sdm',[[0,'#F5EDDC'],[1,'#E9D9B8']],0,1);                       // песчаная коса
+    lg('shl',[[0,'#CDEEF4'],[1,'#8FD2E2']],0,1);                       // мелководье у берега
+    lg('fogu',[[0,'#ECECEC',.95],[1,'#ECECEC',0]],0,1);                 // дымка сверху вниз
+    lg('edg',[[0,'#FFFFFF',0],[.16,'#FFFFFF',1],[.84,'#FFFFFF',1],[1,'#FFFFFF',0]],1,0);
+    var mk2=el(d,'mask',{id:'edge'+uid});el(mk2,'rect',{x:-30,y:0,width:460,height:h,fill:'url(#edg'+uid+')'});
+    var bl=el(d,'filter',{id:'bl'+uid,x:'-20%',y:'-20%',width:'140%',height:'140%'});el(bl,'feGaussianBlur',{stdDeviation:2.2});
+    var sh=el(d,'filter',{id:'sh'+uid,x:'-30%',y:'-30%',width:'160%',height:'170%'});el(sh,'feGaussianBlur',{stdDeviation:9});
+    return v}
+  // мягкая ёлка: 4 скруглённых яруса, градиент и блик
+  function pine(g,x,base,h,grad,uid,shade){
+    var w=h*.46,tiers=4,y0=base-h*.1;
+    el(g,'rect',{x:x-w*.04,y:base-h*.16,width:w*.08,height:h*.16,rx:2,fill:'#6F6252',opacity:.8});
+    for(var i=0;i<tiers;i++){
+      var top=base-h+i*h*.19, bot=base-h*.14-(tiers-1-i)*h*.17+h*.06, tw=w*(.42+i*.2)/2;
+      var d='M'+x+','+top+' C'+(x+tw*.25)+','+(top+(bot-top)*.35)+' '+(x+tw*.95)+','+(bot-(bot-top)*.22)+' '+(x+tw)+','+bot+' Q'+x+','+(bot+h*.07)+' '+(x-tw)+','+bot+' C'+(x-tw*.95)+','+(bot-(bot-top)*.22)+' '+(x-tw*.25)+','+(top+(bot-top)*.35)+' '+x+','+top+'Z';
+      el(g,'path',{d:d,fill:'url(#'+grad+uid+')'});
+      if(shade) el(g,'path',{d:'M'+x+','+top+' C'+(x-tw*.25)+','+(top+(bot-top)*.35)+' '+(x-tw*.95)+','+(bot-(bot-top)*.22)+' '+(x-tw*.8)+','+(bot-(bot-top)*.05)+' C'+(x-tw*.4)+','+(bot-(bot-top)*.3)+' '+(x-tw*.12)+','+(top+(bot-top)*.5)+' '+x+','+top+'Z',fill:'#fff',opacity:.16});
+    }
+  }
+  // пальма: ствол с наклоном, веер листьев, кокосы — масштабируется как ёлка
+  function palm(g,x,base,h,uid,grad){
+    var bend=x<200?1:-1, tw=Math.max(2.4,h*.052);
+    var tx=x+bend*h*.15, ty=base-h;
+    el(g,'ellipse',{cx:x,cy:base,rx:tw*2.6,ry:tw*.8,fill:'#D9C5A0',opacity:.5});
+    var d='M'+x+','+base+' C'+(x+bend*h*.02)+','+(base-h*.4)+' '+(x+bend*h*.07)+','+(base-h*.74)+' '+tx+','+ty;
+    el(g,'path',{d:d,stroke:'#A98A68','stroke-width':tw,fill:'none','stroke-linecap':'round'});
+    el(g,'path',{d:d,stroke:'#FFFFFF','stroke-width':tw*.28,fill:'none','stroke-linecap':'round',opacity:.22});
+    var L=h*.44, W=h*.155, col='url(#'+grad+uid+')';
+    [[-186,.84],[-156,1],[-124,.93],[-92,1.03],[-58,.96],[-26,.88],[6,.72]].forEach(function(q,qi){
+      leaf(g,tx,ty,q[0],L*q[1],W*(qi%2?.86:1),col);
+    });
+    el(g,'circle',{cx:tx,cy:ty,r:tw*.75,fill:'#6E9D6C'});
+    if(h>120){
+      el(g,'circle',{cx:tx-tw*1.1,cy:ty+tw*1.3,r:tw*.5,fill:'#8A6B4E'});
+      el(g,'circle',{cx:tx+tw*.95,cy:ty+tw*1.6,r:tw*.44,fill:'#7B5F45'});
+    }
+  }
+  // крупный пляж: вода, песчаный холм, две пальмы
+  function beach(g,x,base,s,uid,grad,opts){
+    var W=150*s;
+    el(g,'ellipse',{cx:x,cy:base+15*s,rx:W*1.12,ry:38*s,fill:'#AEDCE8',opacity:.8});
+    el(g,'ellipse',{cx:x,cy:base+22*s,rx:W*.86,ry:25*s,fill:'#8FCDDD',opacity:.7});
+    [-1,1].forEach(function(d){
+      el(g,'path',{d:'M'+(x+d*W*1.18)+','+(base+4*s)+' q'+(d*14*s)+','+(-7*s)+' '+(d*28*s)+',0',stroke:'#FFFFFF','stroke-width':2.6*s,fill:'none','stroke-linecap':'round',opacity:.7});
+      el(g,'path',{d:'M'+(x+d*W*.92)+','+(base+28*s)+' q'+(d*12*s)+','+(-6*s)+' '+(d*24*s)+',0',stroke:'#FFFFFF','stroke-width':2.2*s,fill:'none','stroke-linecap':'round',opacity:.55});
+    });
+    el(g,'path',{d:'M'+(x-W)+','+base+' C'+(x-W*.72)+','+(base-54*s)+' '+(x+W*.68)+','+(base-58*s)+' '+(x+W)+','+base+' Z',fill:'url(#sd'+uid+')'});
+    el(g,'ellipse',{cx:x,cy:base,rx:W,ry:16*s,fill:'#E6D6B2'});
+    el(g,'path',{d:'M'+(x-W)+','+base+' a'+W+','+(16*s)+' 0 0 0 '+(2*W)+',0',fill:'none',stroke:'#FFFFFF','stroke-width':3*s,opacity:.6});
+    palm(g,x-W*.34,base-6*s,186*s,uid,grad);
+    palm(g,x+W*.32,base-2*s,132*s,uid,grad);
+    if(opts&&opts.umbrella) umbrella(g,x+W*.66,base-2*s,s*1.2);
+    if(opts&&opts.star){
+      starfish(g,x-W*.68,base+3*s,8*s,'#F0A27A');
+      el(g,'ellipse',{cx:x+W*.06,cy:base+5*s,rx:5*s,ry:3*s,fill:'#D9C5A0'});
+    }
+    if(opts&&opts.boat) boat(g,x+(opts.boat)*W*1.6,base+16*s,s*.78);
+  }
+  function cloud(g,x,y,s,uid,o){
+    var c=el(g,'g',{transform:'translate('+x+','+y+') scale('+s+')',opacity:o});
+    var P=[[0,46,34],[44,22,46],[100,34,40],[146,48,28],[78,52,44]];
+    var sh=el(c,'g',{filter:'url(#sh'+uid+')',opacity:.28,transform:'translate(0,14)'});P.forEach(function(q){el(sh,'circle',{cx:q[0]+34,cy:q[1]+20,r:q[2],fill:'#9FB1C0'})});
+    el(c,'rect',{x:6,y:58,width:176,height:34,rx:17,fill:'url(#cl'+uid+')'});
+    P.forEach(function(q){el(c,'circle',{cx:q[0]+34,cy:q[1]+20,r:q[2],fill:'url(#cl'+uid+')'})});
+  }
+  function mount(g,x,w,h,base,uid,snow,op){
+    var m=el(g,'g',{opacity:op||1});
+    el(m,'path',{d:'M'+(x-w/2)+','+base+' L'+(x-w*.06)+','+(base-h*.97)+' Q'+x+','+(base-h*1.02)+' '+(x+w*.06)+','+(base-h*.97)+' L'+(x+w/2)+','+base+'Z',fill:'url(#mt'+uid+')'});
+    el(m,'path',{d:'M'+x+','+(base-h)+' L'+(x+w/2)+','+base+' L'+(x+w*.12)+','+base+' Z',fill:'#6F869D',opacity:.28});
+    if(snow) el(m,'path',{d:'M'+(x-w*.06)+','+(base-h*.97)+' Q'+x+','+(base-h*1.02)+' '+(x+w*.06)+','+(base-h*.97)+' L'+(x+w*.15)+','+(base-h*.72)+' Q'+(x+w*.08)+','+(base-h*.78)+' '+(x+w*.02)+','+(base-h*.7)+' Q'+(x-w*.05)+','+(base-h*.8)+' '+(x-w*.1)+','+(base-h*.72)+'Z',fill:'#fff'});
+  }
+  var uidN=0;
+  function hills(g,uid,y,amp,fill,seed){
+    var d='M-20,560 ';
+    for(var x=-20;x<=420;x+=40){ d+='L'+x+','+(y+Math.sin((x+seed)/70)*amp)+' '; }
+    d+='L430,560Z'; el(g,'path',{d:d,fill:fill});
+  }
+  function grass(g,x,base,h,col){
+    for(var i=-2;i<=2;i++)
+      el(g,'path',{d:'M'+x+','+base+' Q'+(x+i*3)+','+(base-h*.6)+' '+(x+i*7)+','+(base-h),stroke:col,'stroke-width':2,fill:'none','stroke-linecap':'round'});
+  }
+  function tuft(g,x,base,w,h,grad,uid,op){
+    var d='M'+(x-w)+','+base;
+    d+=' Q'+(x-w*.8)+','+(base-h*.55)+' '+(x-w*.45)+','+(base-h*.82);
+    d+=' Q'+(x-w*.3)+','+(base-h*.4)+' '+(x-w*.12)+','+(base-h*.98);
+    d+=' Q'+x+','+(base-h*.42)+' '+(x+w*.16)+','+(base-h*.92);
+    d+=' Q'+(x+w*.34)+','+(base-h*.38)+' '+(x+w*.52)+','+(base-h*.76);
+    d+=' Q'+(x+w*.82)+','+(base-h*.5)+' '+(x+w)+','+base+' Z';
+    el(g,'path',{d:d,fill:'url(#'+grad+uid+')',opacity:op==null?1:op});
+    el(g,'ellipse',{cx:x,cy:base,rx:w*.95,ry:h*.08,fill:'#8FB169',opacity:.14});
+  }
+  function plume(g,x,base,h,lean,grad,uid){
+    var w=h*.052, tipx=x+lean*h*.26, tipy=base-h;
+    el(g,'path',{d:'M'+x+','+base+
+      ' C'+(x-w*1.6)+','+(base-h*.3)+' '+(tipx-w*1.5)+','+(base-h*.72)+' '+tipx+','+tipy+
+      ' C'+(tipx+w*1.5)+','+(base-h*.72)+' '+(x+w*1.6)+','+(base-h*.3)+' '+x+','+base+'Z',
+      fill:'url(#'+grad+uid+')'});
+    el(g,'path',{d:'M'+x+','+base+
+      ' C'+(x-w*1.6)+','+(base-h*.3)+' '+(tipx-w*1.5)+','+(base-h*.72)+' '+tipx+','+tipy+
+      ' C'+(tipx-w*.3)+','+(base-h*.7)+' '+(x-w*.5)+','+(base-h*.3)+' '+x+','+base+'Z',
+      fill:'#FFFFFF',opacity:.22});
+  }
+  function clump(g,x,base,h,grad,uid,n){
+    n=n||7;
+    for(var i=0;i<n;i++){
+      var k=(i-(n-1)/2)/((n-1)/2);
+      plume(g,x+k*h*.1,base+Math.abs(k)*h*.02,h*(1-Math.abs(k)*.3),k*1.9,grad,uid);
+    }
+  }
+  function flower(g,x,base,h,col,core,kind){
+    el(g,'path',{d:'M'+x+','+base+' q'+(h*.1)+',-'+(h*.5)+' '+(h*.04)+',-'+h,
+      stroke:'#9FB179','stroke-width':1.6,fill:'none','stroke-linecap':'round'});
+    el(g,'path',{d:'M'+(x+h*.05)+','+(base-h*.45)+' q'+(h*.16)+',-'+(h*.08)+' '+(h*.2)+',-'+(h*.2),
+      stroke:'#9FB179','stroke-width':1.3,fill:'none','stroke-linecap':'round'});
+    var tx=x+h*.04, ty=base-h;
+    if(kind===1){                                  // зонтик
+      for(var i=0;i<7;i++){
+        var a1=Math.PI*(1.08+0.12*i);
+        el(g,'circle',{cx:tx+Math.cos(a1)*h*.14,cy:ty+Math.sin(a1)*h*.1+h*.04,r:h*.045,fill:col});
+      }
+    } else if(kind===2){                           // колокольчик / василёк
+      for(var j=0;j<6;j++){
+        var a2=j*Math.PI/3;
+        el(g,'ellipse',{cx:tx+Math.cos(a2)*h*.1,cy:ty+Math.sin(a2)*h*.1,rx:h*.07,ry:h*.045,fill:col,
+          transform:'rotate('+(a2*180/Math.PI)+','+(tx+Math.cos(a2)*h*.1)+','+(ty+Math.sin(a2)*h*.1)+')'});
+      }
+      el(g,'circle',{cx:tx,cy:ty,r:h*.05,fill:core});
+    } else {                                       // метёлка
+      for(var k=0;k<5;k++)
+        el(g,'ellipse',{cx:tx+(k-2)*h*.05,cy:ty+Math.abs(k-2)*h*.05,rx:h*.035,ry:h*.1,fill:col});
+    }
+  }
+  function feather(g,x,base,h,col,tip){
+    for(var i=0;i<6;i++){
+      var k=(i-2.5)/2.5, ex=x+k*h*.46, ey=base-h*(1-Math.abs(k)*.3);
+      el(g,'path',{d:'M'+x+','+base+' Q'+(x+k*h*.12)+','+(base-h*.58)+' '+ex+','+ey,
+        stroke:col,'stroke-width':1.7,fill:'none','stroke-linecap':'round',opacity:.95});
+      el(g,'ellipse',{cx:ex+k*h*.04,cy:ey-h*.06,rx:h*.03,ry:h*.085,fill:tip,opacity:.95,
+        transform:'rotate('+(k*30)+','+ex+','+(ey-h*.06)+')'});
+    }
+  }
+  function leaf(g,tx,ty,deg,len,w,col){
+    var a=deg*Math.PI/180, ex=tx+Math.cos(a)*len, ey=ty+Math.sin(a)*len+len*.22;
+    var nx=Math.cos(a+Math.PI/2), ny=Math.sin(a+Math.PI/2);
+    var m1x=tx+Math.cos(a)*len*.5+nx*w, m1y=ty+Math.sin(a)*len*.5+ny*w;
+    var m2x=tx+Math.cos(a)*len*.55-nx*w*.45, m2y=ty+Math.sin(a)*len*.55-ny*w*.45+len*.12;
+    el(g,'path',{d:'M'+tx+','+ty+' Q'+m1x+','+m1y+' '+ex+','+ey+' Q'+m2x+','+m2y+' '+tx+','+ty+'Z',fill:col});
+  }
+  function umbrella(g,x,base,s2){
+    el(g,'ellipse',{cx:x,cy:base+2*s2,rx:16*s2,ry:4*s2,fill:'#C9B184',opacity:.35});
+    el(g,'path',{d:'M'+x+','+base+' L'+(x+3*s2)+','+(base-54*s2),stroke:'#B89A72','stroke-width':3*s2,fill:'none','stroke-linecap':'round'});
+    var tx=x+3*s2, ty=base-54*s2;
+    for(var i=0;i<6;i++){
+      var a1=Math.PI+(i/6)*Math.PI, a2=Math.PI+((i+1)/6)*Math.PI;
+      el(g,'path',{d:'M'+tx+','+ty+' L'+(tx+Math.cos(a1)*34*s2)+','+(ty-Math.sin(a1)*16*s2)+
+        ' Q'+(tx+Math.cos((a1+a2)/2)*36*s2)+','+(ty-Math.sin((a1+a2)/2)*16*s2+5*s2)+' '+
+        (tx+Math.cos(a2)*34*s2)+','+(ty-Math.sin(a2)*16*s2)+' Z',
+        fill:i%2?'#FFFFFF':'#F2744A'});
+    }
+    el(g,'circle',{cx:tx,cy:ty,r:2.6*s2,fill:'#E0E6E8'});
+  }
+  function boat(g,x,y,s2){
+    el(g,'path',{d:'M'+(x-22*s2)+','+y+' Q'+x+','+(y+13*s2)+' '+(x+22*s2)+','+y+' Z',fill:'#F2744A'});
+    el(g,'rect',{x:x-22*s2,y:y-3*s2,width:44*s2,height:4*s2,rx:2*s2,fill:'#FFFFFF'});
+    el(g,'path',{d:'M'+(x+1*s2)+','+(y-3*s2)+' L'+(x+1*s2)+','+(y-38*s2),stroke:'#9C7E5F','stroke-width':2.4*s2,'stroke-linecap':'round'});
+    el(g,'path',{d:'M'+(x+3*s2)+','+(y-36*s2)+' L'+(x+22*s2)+','+(y-8*s2)+' L'+(x+3*s2)+','+(y-8*s2)+' Z',fill:'#FFFFFF'});
+    el(g,'path',{d:'M'+(x-1*s2)+','+(y-32*s2)+' L'+(x-16*s2)+','+(y-8*s2)+' L'+(x-1*s2)+','+(y-8*s2)+' Z',fill:'#8FD2E2'});
+  }
+  function starfish(g,x,y,r,col){
+    var d='';
+    for(var i=0;i<5;i++){
+      var a1=-Math.PI/2+i*2*Math.PI/5, a2=a1+Math.PI/5;
+      d+=(i?'L':'M')+(x+Math.cos(a1)*r)+','+(y+Math.sin(a1)*r*.8)+
+         'L'+(x+Math.cos(a2)*r*.44)+','+(y+Math.sin(a2)*r*.36);
+    }
+    el(g,'path',{d:d+'Z',fill:col,opacity:.9});
+  }
+  function island(g,x,base,s2,uid,op,pale,extra){
+    var gi=el(g,'g',{opacity:op==null?1:op});
+    // вода вокруг
+    el(gi,'ellipse',{cx:x,cy:base+6*s2,rx:72*s2,ry:20*s2,fill:pale?'#CFE8EF':'#AEDCE8'});
+    el(gi,'ellipse',{cx:x,cy:base+10*s2,rx:52*s2,ry:13*s2,fill:pale?'#BFE0E9':'#8FCDDD',opacity:.8});
+    [-1,1].forEach(function(d){
+      el(gi,'path',{d:'M'+(x+d*78*s2)+','+(base+2*s2)+' q'+(d*9*s2)+','+(-5*s2)+' '+(d*18*s2)+',0',
+        stroke:'#FFFFFF','stroke-width':2*s2,fill:'none','stroke-linecap':'round',opacity:.75});
+      el(gi,'path',{d:'M'+(x+d*58*s2)+','+(base+14*s2)+' q'+(d*8*s2)+','+(-4*s2)+' '+(d*16*s2)+',0',
+        stroke:'#FFFFFF','stroke-width':1.8*s2,fill:'none','stroke-linecap':'round',opacity:.6});
+    });
+    // песчаный холмик
+    el(gi,'path',{d:'M'+(x-56*s2)+','+base+' C'+(x-44*s2)+','+(base-22*s2)+' '+(x+40*s2)+','+(base-24*s2)+' '+(x+56*s2)+','+base+' Z',fill:pale?'#F2E8D4':'#EFE0C2'});
+    el(gi,'ellipse',{cx:x,cy:base,rx:56*s2,ry:9*s2,fill:pale?'#E7DAC2':'#E0CEA6'});
+    el(gi,'path',{d:'M'+(x-56*s2)+','+base+' a56,9 0 0 0 112,0',fill:'none',stroke:'#FFFFFF','stroke-width':2.2*s2,opacity:.55});
+    // пальма
+    var tx=x+6*s2, ty=base-70*s2;
+    el(gi,'path',{d:'M'+(x+2*s2)+','+(base-4*s2)+' C'+(x+10*s2)+','+(base-34*s2)+' '+(x+2*s2)+','+(base-54*s2)+' '+tx+','+ty,
+      stroke:pale?'#B49A7E':'#9C7E5F','stroke-width':6.5*s2,fill:'none','stroke-linecap':'round'});
+    var g1=pale?'#A9C9A2':'#79A977', g2=pale?'#BCD7B3':'#95BF8E';
+    [[-168,34,13],[-138,40,15],[-104,36,14],[-70,41,15],[-32,35,13],[-8,30,11]].forEach(function(L,li){
+      leaf(gi,tx,ty,L[0],L[1]*s2,L[2]*s2,li%2?g2:g1);
+    });
+    el(gi,'circle',{cx:tx,cy:ty,r:3.4*s2,fill:pale?'#9BBE96':'#6E9D6C'});
+    if(extra==='two'){
+      var tx2=x-26*s2, ty2=base-48*s2;
+      el(gi,'path',{d:'M'+(x-22*s2)+','+(base-3*s2)+' C'+(x-30*s2)+','+(base-24*s2)+' '+(x-22*s2)+','+(base-38*s2)+' '+tx2+','+ty2,
+        stroke:pale?'#B49A7E':'#9C7E5F','stroke-width':4.6*s2,fill:'none','stroke-linecap':'round'});
+      [[-162,24,9],[-128,27,10],[-92,25,9],[-56,27,10],[-20,22,8]].forEach(function(L,li){
+        leaf(gi,tx2,ty2,L[0],L[1]*s2,L[2]*s2,li%2?(pale?'#BCD7B3':'#95BF8E'):(pale?'#A9C9A2':'#79A977'));
+      });
+    }
+    if(extra==='umbrella') umbrella(gi,x-30*s2,base-4*s2,s2*.92);
+    if(!pale){
+      starfish(gi,x+30*s2,base-2*s2,5*s2,'#F0A27A');
+      el(gi,'ellipse',{cx:x-14*s2,cy:base-1*s2,rx:3.4*s2,ry:2.2*s2,fill:'#E2CFA6'});
+    }
+  }
+  function onArc(cx,cy,rx,ry,t){ var a=Math.PI*(0.92-0.84*t); return {x:cx+rx*Math.cos(a), y:cy-ry*Math.sin(a)}; }
+  function ears(g,x,base,h,n,col,ear){
+    for(var i=0;i<n;i++){
+      var k=(i-(n-1)/2)/Math.max(1,(n-1)/2), hh=h*(1-Math.abs(k)*.22), tipx=x+k*h*.34, tipy=base-hh;
+      el(g,'path',{d:'M'+x+','+base+' Q'+(x+k*h*.1)+','+(base-hh*.55)+' '+tipx+','+tipy,stroke:col,'stroke-width':2.1,fill:'none','stroke-linecap':'round'});
+      el(g,'ellipse',{cx:tipx,cy:tipy-h*.1,rx:h*.045,ry:h*.11,fill:ear,transform:'rotate('+(k*16)+','+tipx+','+(tipy-h*.1)+')'});
+    }
+  }
+  function bush(g,x,y,r,col){
+    el(g,'circle',{cx:x,cy:y,r:r,fill:col});
+    el(g,'circle',{cx:x-r*.7,cy:y+r*.25,r:r*.7,fill:col});
+    el(g,'circle',{cx:x+r*.75,cy:y+r*.3,r:r*.65,fill:col});
+  }
+  function wave(g,y,amp,col,op,w){
+    var d='M-20,'+y+' ';
+    for(var x=-20;x<=420;x+=30) d+='Q'+(x+15)+','+(y-amp)+' '+(x+30)+','+y+' ';
+    el(g,'path',{d:d,stroke:col,'stroke-width':w||3,fill:'none',opacity:op==null?1:op,'stroke-linecap':'round'});
+  }
+  scenes.forEach(function(sc){
+    ['l','r'].forEach(function(side,si){
+      var uid=''+(++uidN), host=sc.querySelector('.rt-scene__side--'+side), v=mk(400,548,uid), g=el(v,'g',{});
+      var cls=sc.className;
+
+      if(cls.indexOf('rt-scene--snow')>=0){
+        var farS=el(g,'g',{filter:'url(#bl'+uid+')',opacity:.8});
+        for(var i=0;i<11;i++) pine(farS,10+i*38+(si?6:0),470,118+((i*29)%34),'swf',uid,false);
+        el(g,'rect',{x:-10,y:330,width:420,height:150,fill:'url(#fog'+uid+')'});
+        for(var j=0;j<9;j++) pine(g,24+j*46+(si?14:0),500,168+((j*41+si*17)%46),'swm',uid,true);
+        el(g,'rect',{x:-10,y:380,width:420,height:140,fill:'url(#fog'+uid+')',opacity:.55});
+        for(var k=0;k<6;k++) pine(g,40+k*72+(si?-8:0),520,206+((k*53+si*29)%50),'sw',uid,true);
+        for(var s2=0;s2<22;s2++){
+          var fx=(s2*61+si*37)%400, fy=(s2*73+si*51)%430;
+          el(g,'circle',{cx:fx,cy:fy,r:1.5+(s2%3)*1.2,fill:'#fff','class':'sf',
+            style:'animation-duration:'+(7+(s2%6)*1.8)+'s;animation-delay:-'+(s2*0.47)+'s;opacity:'+(.45+((s2%4)/9))});
+        }
+      }
+      else if(cls.indexOf('rt-scene--forest')>=0){
+        var far=el(g,'g',{filter:'url(#bl'+uid+')',opacity:.75});
+        for(var i2=0;i2<11;i2++)pine(far,10+i2*38+(si?6:0),470,120+((i2*29)%34),'pf',uid,false);
+        el(g,'rect',{x:-10,y:330,width:420,height:150,fill:'url(#fog'+uid+')'});
+        for(var j=0;j<9;j++)pine(g,24+j*46+(si?14:0),500,170+((j*41+si*17)%46),'pm',uid,true);
+        el(g,'rect',{x:-10,y:380,width:420,height:140,fill:'url(#fog'+uid+')',opacity:.55});
+        for(var k=0;k<6;k++)pine(g,40+k*72+(si?-8:0),520,210+((k*53+si*29)%50),'pn',uid,true);
+        // листочки кружат в воздухе
+        var lcol=['#C7D9A8','#A8C78F','#D8C98A','#BFD4A0'];
+        for(var lf=0;lf<8;lf++){
+          var lx=(lf*83+si*41)%380+10, ly=(lf*57)%190+66;
+          var lg=el(g,'g',{'class':'lf',style:'animation-duration:'+(11+(lf%5)*3.2)+'s;animation-delay:-'+(lf*1.37)+'s;opacity:'+(.5+((lf%4)/8))});
+          var li=el(lg,'g',{transform:'translate('+lx+','+ly+') rotate('+((lf*47)%360)+')'});
+          var lw=10+(lf%3)*3.4;
+          el(li,'path',{d:'M0,0 q'+lw+',-'+(lw*1.45)+' '+(lw*2.1)+',0 q-'+lw+','+(lw*1.55)+' -'+(lw*2.1)+',0Z',fill:lcol[lf%4]});
+          el(li,'path',{d:'M0,0 L'+(lw*2.1)+',0',stroke:'#8FA77A','stroke-width':Math.max(.8,lw*.09),opacity:.5,'stroke-linecap':'round'});
+        }
+      }
+      else if(cls.indexOf('rt-scene--steppe')>=0){
+        var farS2=el(g,'g',{filter:'url(#bl'+uid+')',opacity:.75});
+        for(var i=0;i<16;i++) clump(farS2,4+i*26+(si?8:0),470,70+((i*29)%30),'st1',uid,6);
+        el(g,'rect',{x:-10,y:330,width:420,height:150,fill:'url(#fog'+uid+')'});
+        for(var j=0;j<13;j++) clump(g,10+j*32+(si?12:0),502,106+((j*41+si*17)%48),'st2',uid,7);
+        [[58,500],[214,498],[338,502]].forEach(function(q,qi){
+          clump(g,si?400-q[0]:q[0],q[1],168+qi*12,'st2',uid,5);
+        });
+        el(g,'rect',{x:-10,y:386,width:420,height:140,fill:'url(#fog'+uid+')',opacity:.5});
+        for(var k=0;k<9;k++) clump(g,14+k*47+(si?-6:0),528,142+((k*53+si*29)%56),'st3',uid,8);
+        [[92,526],[268,530],[390,524]].forEach(function(q,qi){
+          clump(g,si?400-q[0]:q[0],q[1],218+qi*10,'st3',uid,6);
+        });
+        [[66,524,44,2,'#8FB2D4','#F0DE8E'],[182,530,38,1,'#E6E2A6','#D5C97E'],[286,522,42,2,'#A6C0DC','#F0DE8E'],[352,528,36,1,'#E6E2A6','#D5C97E']].forEach(function(q){
+          flower(g,si?400-q[0]:q[0],q[1],q[2],q[4],q[5],q[3]);
+        });
+        // пух и семена трав летят по ветру
+        for(var pf=0;pf<9;pf++){
+          var px=(pf*71+si*37)%380+10, py=(pf*53)%280+150, pr=2.6+(pf%3)*1.1;
+          var pg2=el(g,'g',{'class':'fl',style:'animation-duration:'+(13+(pf%6)*2.6)+'s;animation-delay:-'+(pf*1.11)+'s;opacity:'+(.45+((pf%4)/9))});
+          var pi=el(pg2,'g',{transform:'translate('+px+','+py+')'});
+          el(pi,'circle',{cx:0,cy:0,r:pr*2.1,fill:'#FFFFFF',opacity:.28});
+          for(var h2=0;h2<9;h2++){
+            var ha=h2*Math.PI*2/9, hl=pr*(1.9+(h2%3)*.35);
+            el(pi,'path',{d:'M0,0 Q'+(Math.cos(ha)*hl*.6).toFixed(1)+','+(Math.sin(ha)*hl*.6-pr*.4).toFixed(1)
+              +' '+(Math.cos(ha)*hl).toFixed(1)+','+(Math.sin(ha)*hl).toFixed(1),
+              stroke:'#FFFFFF','stroke-width':.9,fill:'none','stroke-linecap':'round',opacity:.6});
+          }
+          el(pi,'circle',{cx:0,cy:0,r:pr*.55,fill:'#FFFFFF',opacity:.9});
+        }
+        // бабочки
+        [[120,330,1],[280,300,-1],[200,370,1]].forEach(function(q,bi){
+          var bx2=si?400-q[0]:q[0];
+          var bgw=el(g,'g',{'class':'bf',style:'animation-duration:'+(16+bi*4)+'s;animation-delay:-'+(bi*5.2)+'s'});
+          var bi2=el(bgw,'g',{transform:'translate('+bx2+','+q[1]+') scale('+(q[2]*2.1)+',2.1)'});
+          el(bi2,'path',{d:'M0,0 q-7,-8 -11,-2 q-3,6 11,4Z',fill:'#F2B45A',opacity:.9});
+          el(bi2,'path',{d:'M0,0 q7,-8 11,-2 q3,6 -11,4Z',fill:'#E8A14A',opacity:.9});
+          el(bi2,'ellipse',{cx:0,cy:1,rx:1.4,ry:3.4,fill:'#6B5A45'});
+        });
+      }
+      else if(cls.indexOf('rt-scene--mountains')>=0){
+        mount(g,si?110:300,380,300,520,uid,true,.7);mount(g,si?300:100,330,240,520,uid,true,.9);mount(g,si?30:380,270,170,520,uid,false,.8);
+        el(g,'rect',{x:-10,y:400,width:420,height:130,fill:'url(#fog'+uid+')'});
+      }
+      else if(cls.indexOf('rt-scene--sea')>=0){
+        // дальний пляж
+        beach(g, si?400-302:302, 368, .52, uid, 'pm', {boat:-1});
+        // ближний крупный пляж
+        beach(g, si?400-178:178, 456, 1, uid, 'pn', {umbrella:1,star:1,boat:1});
+        // чайки летают над морем
+        // слева текст — чайки держатся ниже строк; справа небо свободно
+        (si?[[40,108,1,.9],[150,140,1,.75],[250,96,1,1],[90,178,1,.65],[310,160,1,.8]]
+           :[[40,232,1,.85],[160,254,1,.7],[268,226,1,.95],[330,250,1,.65]]).forEach(function(q,qi){
+          var bgr=el(g,'g',{'class':'bd',style:'animation-duration:'+(15+qi*3.4)+'s;animation-delay:-'+(qi*3.7)+'s;opacity:'+q[3]});
+          var bin=el(bgr,'g',{transform:'translate('+(si?400-q[0]:q[0])+','+q[1]+') scale('+(si?-1:1)*q[3]+','+q[3]+')'});
+          el(bin,'path',{d:'M0,0 q9,-8 18,0 M18,0 q9,-8 18,0',stroke:'#8FAAB4','stroke-width':2.2,fill:'none','stroke-linecap':'round'});
+        });
+      }
+      host.appendChild(v);
+    });
+  });
+
+  function draw(p){
+    var t=.02+p*.96, pt=path.getPointAtLength(L*t), pt2=path.getPointAtLength(Math.min(L,L*t+2));
+    var ang=Math.atan2(pt2.y-pt.y,pt2.x-pt.x)*180/Math.PI, flip=Math.abs(ang)>90?-1:1;
+    bus.setAttribute('transform','translate('+pt.x+','+pt.y+') rotate('+ang+') scale(1,'+flip+')');
+    done.setAttribute('stroke-dasharray',(L*t)+' 9999');
+    dots.forEach(function(d,i){d.setAttribute('fill',t>=stops[i]-.01?'#0A8F9C':'#B8C4C7')});
+  }
+  var lastStep=-1;
+  function setStep(p){
+    var n=scenes.length||1, step=Math.min(n-1,Math.floor(p*n)); if(step===lastStep) return; lastStep=step;
+    texts.forEach(function(e,i){e.classList.toggle('is-active',i===step)});
+    scenes.forEach(function(e){e.classList.toggle('is-active',+e.dataset.step===step)});
+    num.textContent=(step+1<10?'0':'')+(step+1);
+  }
+  /* ---- прокрутка ведёт историю, но плавно ----
+     Размеры блока снимаем один раз (при прокрутке страницу не измеряем — именно
+     это давало рывки). Прогресс догоняет реальное положение с сглаживанием,
+     поэтому автобус и сцены едут мягко, а не скачками. */
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var cur=0, target=0, running=false, secTop=0, secH=0, vh=0;
+
+  function measure(){ secTop=sec.getBoundingClientRect().top+(window.pageYOffset||0); secH=sec.offsetHeight; vh=innerHeight }
+  function calcTarget(){
+    var total=secH-vh;
+    target = total>0 ? Math.min(1,Math.max(0,((window.pageYOffset||0)-secTop)/total)) : 0;
+  }
+  function loop(){
+    cur += (target-cur) * (reduce ? 1 : .12);
+    if(Math.abs(target-cur)<.0005){ cur=target; running=false }
+    draw(cur); setStep(cur);
+    if(running) requestAnimationFrame(loop);
+  }
+  function kick(){ if(!running){ running=true; requestAnimationFrame(loop) } }
+  addEventListener('scroll',function(){ calcTarget(); kick() },{passive:true});
+  addEventListener('resize',function(){ measure(); calcTarget(); kick() });
+  addEventListener('load',function(){ measure(); calcTarget(); cur=target; draw(cur); setStep(cur) });
+
+  measure(); calcTarget(); cur=target; draw(cur); setStep(cur);
+})();
+</script>
 </body>
 </html>
