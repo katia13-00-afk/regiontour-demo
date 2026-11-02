@@ -1424,3 +1424,109 @@ p{ color:inherit; }
 .f input{ border-radius:12px; }
 @media (max-width:1040px){ .row{ grid-template-columns:minmax(0,1fr) clamp(7rem,18vw,10rem); } .row p{ grid-column:1; grid-row:2; } .row__img{ grid-column:2; grid-row:1 / span 2; } }
 @media (max-width:640px){ .row{ grid-template-columns:1fr; } .row p{ grid-column:1; } .row__img{ grid-column:1; grid-row:auto; } }
+
+/* =====================================================================
+   v11 — по правкам: без обводок и цветных подложек, фотокарточки в отзывах,
+   цветные контакты, шрифты меньше, переделаны шаги/преимущества/услуги/автопарк
+   ===================================================================== */
+:root{ --shadow:0 1px 2px rgba(31,47,56,.06), 0 18px 36px -24px rgba(31,47,56,.35); }
+
+/* ---- без цветных подложек у секций: всё на белом ---- */
+.sec, .sec--ink, .sec--sky, .sec--sand, .sec--order, .sec--show, .ft{ background:#fff !important; }
+.ft{ border-top:1px solid var(--line); }
+
+/* ---- без обводок: карточки держатся на мягкой тени ---- */
+.note, .review, .pass, .bus, .feat, .aud, .lad li, .chips2 li, .boarding, .sr__panel{ border:0 !important; box-shadow:var(--shadow); }
+.note{ background:#fff; }
+
+/* ---- шрифты меньше по всему сайту ---- */
+body{ font-size:1rem; }
+.h2, .h2--long, .sec--ink .h2, .h2--light, .sec--order .h2{ font-size:clamp(1.75rem,2.6vw,2.5rem); margin-bottom:clamp(1.5rem,2.5vw,2.25rem); }
+.hero__h1, .hero--page .hero__h1, .hero--transport .hero__h1{ font-size:clamp(2.25rem,4.2vw,3.75rem); }
+.hero__lead, .hero--transport .hero__lead{ font-size:clamp(1rem,1.15vw,1.125rem); }
+.sec__lead{ font-size:1.0625rem; }
+.offer h3, .offers--3 .offer h3, .offers--4 .offer h3{ font-size:clamp(1.25rem,1.8vw,1.75rem); }
+.offer p{ font-size:.9375rem; }
+.stat__num, .sec--ink .stat__num, .sec--ink .stat:nth-child(even) .stat__num{ font-size:clamp(2.25rem,3.6vw,3.25rem); }
+.note p{ font-size:1rem; }
+.faq summary{ font-size:1.0625rem; }
+.stamp h3, .reel__card h3, .poster h3{ font-size:1.125rem; }
+.stamp p, .reel__card p, .poster p{ font-size:.9375rem; }
+.board__dest{ font-size:clamp(1rem,1.3vw,1.1875rem); }
+.yrs__y, .yrs li.in .yrs__y{ font-size:clamp(2rem,3.6vw,3rem); }
+.yrs p{ font-size:clamp(1rem,1.3vw,1.25rem); }
+.spec__list li{ font-size:1.0625rem; }
+
+/* ---- отзывы: снова фотокарточки ---- */
+.reviews{ gap:clamp(1.5rem,3vw,2.5rem); }
+.review, .review.rv.in{ background:#fff; padding:.9rem .9rem 1.4rem; border-radius:.5rem; transform:rotate(var(--r,0deg)) !important; overflow:visible; }
+.review:hover{ transform:rotate(0) translateY(-4px) !important; transition:transform .4s var(--spring); }
+.review__photo{ aspect-ratio:4/3; margin:0 0 1rem; border-radius:.25rem; overflow:hidden; }
+.review > :not(.review__photo){ margin-inline:.35rem; }
+.review__name{ font-size:1.0625rem; }
+.review__text{ font-size:.9375rem; }
+
+/* ---- контакты: снова цветные шапки ---- */
+.pass{ border-top:0 !important; overflow:hidden; border-radius:16px; }
+.pass{ --pb:#0E9AAA; } .pass:nth-child(2){ --pb:#F26122; } .pass:nth-child(3){ --pb:#3563D9; }
+.pass__top, .pass:nth-child(1) .pass__top, .pass:nth-child(2) .pass__top, .pass:nth-child(3) .pass__top{ background:var(--pb) !important; color:#fff !important; padding:1.25rem 1.5rem; }
+.pass__city{ color:#fff; font-size:1.375rem; }
+.pass__bus{ display:block; }
+.pass dl{ padding:1.25rem 1.5rem 1.5rem; gap:.9rem; }
+.pass dt{ font-size:.75rem; }
+.pass dd, .pass dd a{ font-size:1rem; }
+
+/* ---- автопарк: легче читать ---- */
+.bus{ background:#fff; border-radius:16px; }
+.bus__body{ padding:1.1rem 1.25rem 1.25rem; gap:.25rem; }
+.bus__kind{ font-size:.75rem; letter-spacing:.1em; color:var(--ink-2); }
+.bus h3{ font-size:1.25rem; letter-spacing:-.01em; }
+.bus__seats{ margin:.35rem 0 .75rem; gap:.4rem; }
+.bus__seats b{ font-size:1.75rem; letter-spacing:-.03em; color:var(--fill); }
+.bus__seats span{ font-size:.9375rem; }
+.bus__feat{ border-top:1px solid var(--line); padding-top:.85rem; gap:.4rem 1rem; }
+.bus__feat li{ font-size:.875rem; color:var(--ink-2); }
+.bus__feat i{ width:1.15rem; height:1.15rem; color:var(--fill); }
+.sr__spec h3{ font-size:clamp(1.5rem,2.4vw,2.25rem); }
+.sr__seats b{ font-size:clamp(2.25rem,3.6vw,3.25rem); color:var(--fill); }
+
+/* ---- шаги («Как это работает»): спокойные карточки с номером ---- */
+.sbig, .lad{ display:grid; grid-template-columns:repeat(auto-fit,minmax(14rem,1fr)); gap:clamp(1rem,2vw,1.5rem); }
+.sbig::before{ display:none !important; }
+.sbig li, .lad li{ display:flex !important; flex-direction:column; align-items:flex-start; gap:.6rem; padding:1.5rem; margin:0; background:#fff; border-radius:16px; box-shadow:var(--shadow); }
+.sbig__n, .sbig li:last-child .sbig__n, .lad__n{ display:grid; place-items:center; width:2.5rem; height:2.5rem; min-width:0; margin:0 0 .4rem; border:0; border-radius:50%; background:var(--fill); color:#fff; font-size:1rem; font-weight:700; letter-spacing:0; line-height:1; }
+.sbig h3, .lad h3{ font-size:1.125rem; margin:0; color:var(--ink); }
+.sbig p, .lad p{ font-size:.9375rem; color:var(--ink-2); }
+.lad li > div{ display:flex; flex-direction:column; gap:.4rem; }
+
+/* ---- преимущества: компактная сетка с иконками в плашках ---- */
+.lfeats{ border-top:0; gap:clamp(1rem,2vw,1.5rem); margin-bottom:clamp(1.75rem,3vw,2.5rem); }
+.lfeat, .lfeat + .lfeat{ padding:0; border:0 !important; gap:.6rem; }
+.lfeat .tile{ width:3rem; height:3rem; border-radius:12px; background:#E6F5F7; justify-content:center; }
+.lfeat .tile svg{ width:1.5rem; height:1.5rem; }
+.lfeat h3{ font-size:1.125rem; margin-top:.35rem; }
+.lfeat p{ font-size:.9375rem; }
+.feat{ padding:1.5rem; gap:.6rem; }
+.feat h3{ font-size:1.125rem; margin-top:.35rem; }
+.feat p{ font-size:.9375rem; }
+.feat .tile{ width:3rem; height:3rem; border-radius:12px; }
+.feat .tile svg{ width:1.5rem; height:1.5rem; }
+.aud h3{ font-size:1.125rem; }
+.aud p{ font-size:.9375rem; }
+
+/* ---- услуги корпоративным клиентам: карточки с фото, как остальные ---- */
+.rows{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(1rem,2vw,1.5rem); border:0; }
+.row, .row:hover{ display:flex; flex-direction:column; gap:.5rem; padding:0 0 1.4rem; border:0; background:#fff; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); }
+.row__img{ order:-1; aspect-ratio:16/10; border-radius:0; margin-bottom:.6rem; width:100%; }
+.row h3{ font-size:1.25rem; letter-spacing:-.01em; line-height:1.2; padding-inline:1.25rem; }
+.row p{ font-size:.9375rem; padding-inline:1.25rem; max-width:none; }
+.row:hover .row__img img{ transform:scale(1.05); }
+
+@media (max-width:1040px){ .lfeats{ grid-template-columns:1fr 1fr; } .rows{ grid-template-columns:1fr 1fr; } }
+@media (max-width:640px){
+  .lfeats, .rows{ grid-template-columns:1fr; }
+  .review, .review.rv.in{ transform:none !important; }
+  .row p{ grid-column:auto; }
+}
+.sec--sky .bus, .bus, .sec--sky .bus .bus__body{ background:#fff; }
+.row, .row h3, .row p{ text-align:left; }
