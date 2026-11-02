@@ -1173,3 +1173,96 @@ h1, h2, h3, .stat__num, .pass__city, .mnav a, .hd__logo b{ font-family:var(--fon
 }
 
 /* ничего не крутится, пока сцена не на экране */
+
+/* =====================================================================
+   v7 — мягче по цвету: меньше чёрного, белый текст на бирюзовом,
+        яркие карточки контактов, короче прокрутка истории, новый экран «Транспорта»
+   ===================================================================== */
+[data-pal="g-teal"]{ --ink:#26394A; --ink-rgb:38,57,74; --ink-2:#55697A; --line:rgba(38,57,74,.14); --on-accent:#fff; --fill:#0A8F9C; --fill-d:#077985; --navy-t:#0B4650; --navy-t2:#3B6A74; }
+.hero .btn--glass, .shero .btn--glass{ color:#fff; }
+
+/* ---- кнопки: бирюзовые вместо чёрных, белый текст, белый круг со стрелкой ---- */
+.btn--orange, .btn--ink, .phero .btn--orange, .chero .btn--orange, .sec--ink .btn--orange, .mnav .btn--orange, .shero .btn--orange, .boarding .btn--orange, .thero .btn--orange{ background:var(--fill); color:#fff; }
+.btn--orange:hover, .btn--ink:hover, .phero .btn--orange:hover, .chero .btn--orange:hover, .sec--ink .btn--orange:hover, .mnav .btn--orange:hover, .shero .btn--orange:hover, .boarding .btn--orange:hover, .thero .btn--orange:hover{ background:var(--fill-d); }
+.btn > svg, .btn--orange > svg, .btn--ink > svg, .sec--ink .btn--orange > svg, .mnav .btn--orange > svg, .shero .btn--orange > svg{ background:#fff; color:var(--fill); }
+.btn--ink:hover > svg{ background:#fff; color:var(--fill-d); }
+.hero .btn--orange{ background:#fff; color:var(--ink); }
+.hero .btn--orange:hover{ background:#EAF7F9; }
+.hero .btn--orange > svg{ background:var(--fill); color:#fff; }
+.hero .btn--glass > svg{ background:#fff; color:var(--fill); }
+.phero .btn--glass, .chero .btn--glass, .thero .btn--glass{ color:var(--ink); border-color:rgba(var(--ink-rgb),.25); }
+.phero .btn--glass > svg, .chero .btn--glass > svg, .thero .btn--glass > svg{ background:var(--fill); color:#fff; }
+.fab{ background:var(--fill) !important; }
+.fab svg{ background:#fff; color:var(--fill); }
+.hd__burger, .hd.is-solid .hd__burger{ background:var(--fill); }
+.hd__cta svg{ background:var(--fill); color:#fff; }
+.sr__tab[aria-selected="true"]{ background:var(--fill); border-color:var(--fill); color:#fff; }
+.chips2 li:hover{ background:var(--fill); }
+.chips2 li:hover b{ background:#fff; color:var(--fill); }
+.reel__btn:hover{ background:var(--fill); border-color:var(--fill); }
+.boarding__stub .btn--orange{ background:var(--fill); }
+
+/* ---- бирюзовая заливка: белый текст, а не чёрный ---- */
+.sbig li:last-child .sbig__n{ background:var(--fill); border-color:var(--fill); color:#fff; }
+.chero__stamp{ background:var(--fill); color:#fff; }
+.chero__stamp::before{ border-color:rgba(255,255,255,.55); }
+.offer:hover .offer__go{ background:var(--fill); border-color:var(--fill); color:#fff; }
+.pass:nth-child(1) .pass__top{ color:#fff; }
+
+/* ---- подписи в светло-бирюзовых блоках: глубокий сине-зелёный вместо чёрного ---- */
+.sec--ink .h2, .h2--light, .sec--order .h2{ color:var(--navy-t); }
+.sec--ink .stat__num, .sec--ink .stat:nth-child(even) .stat__num{ color:var(--navy-t); }
+.sec--ink .stat__lbl{ color:var(--navy-t2); }
+.sec--ink .stat p, .sec--ink .sec__lead{ color:var(--navy-t2); }
+.sec--ink .stat, .sec--ink .stat + .stat, .sec--ink .stat:nth-child(3), .sec--ink .stat:nth-child(n+3){ border-top-color:rgba(11,70,80,.22); }
+.feat h3, .board__dest, .lad h3{ color:var(--navy-t); }
+.feat p, .lad p{ color:var(--navy-t2); }
+.board li, .board, .lad li{ border-color:rgba(11,70,80,.2); }
+.board__no, .lad__n{ color:var(--fill); }
+.sec--order .consent, .boarding{ color:var(--ink); }
+
+/* ---- контакты: яркие цвета вместо приглушённых ---- */
+.pass{ --pb:#0E9AAA; } .pass:nth-child(2){ --pb:#F26122; } .pass:nth-child(3){ --pb:#3563D9; }
+.pass__top, .pass:nth-child(1) .pass__top, .pass:nth-child(2) .pass__top, .pass:nth-child(3) .pass__top{ background:var(--pb); color:#fff; }
+
+/* ---- фото автобусов: все одной высоты, независимо от пропорций снимка ---- */
+.bus__img{ position:relative; aspect-ratio:16/10; overflow:hidden; padding:0; display:block; }
+.bus__img img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.sr__img{ position:relative; }
+.sr__img img{ position:absolute; inset:0; }
+.reel__img, .poster__img, .pstamp__img{ position:relative; }
+
+/* ---- первый экран «Школьных»: фото не пропадает ---- */
+.phero__photo{ background:#C9D8DB; -webkit-mask-image:-webkit-radial-gradient(white, black); isolation:isolate; }
+.phero__photo img{ transform:none !important; transition:none; }
+
+/* ---- «История»: короче прокрутка и отступ до следующего блока ---- */
+.rt-story{ height:270vh; margin-bottom:clamp(2.5rem,6vw,5rem); }
+.rt-story + .sec{ margin-top:0 !important; border-radius:var(--sheet) var(--sheet) 0 0; padding-top:calc(var(--sec) + var(--sheet) * .5); }
+@media (max-width:980px){ .rt-story{ height:240vh; } }
+@media (max-width:768px){ .rt-story{ height:auto !important; margin-bottom:0; } }
+
+/* ---- «Транспорт»: светлый экран, фото во всю правую половину, автобус выезжает на дорогу ---- */
+.thero{ position:relative; background:var(--paper); overflow:hidden; padding:clamp(7.5rem,14vh,10rem) 0 calc(clamp(3rem,6vw,5rem) + var(--sheet)); }
+.thero__grid{ display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(2rem,5vw,5rem); align-items:center; }
+.thero__h1{ font-size:clamp(2.75rem,5.6vw,5.75rem); line-height:.95; letter-spacing:-.055em; max-width:11ch; }
+.thero__lead{ color:var(--ink-2); font-size:clamp(1.0625rem,1.3vw,1.1875rem); line-height:1.55; max-width:34rem; margin:1.5rem 0 2.25rem; }
+.thero__media{ position:relative; margin-right:calc((min(100vw, var(--wrap)) - 100vw) / 2 - var(--gut)); }
+.thero__photo{ aspect-ratio:5/4.1; border-radius:2rem 0 0 2rem; overflow:hidden; background:#C9D8DB; }
+.thero__photo img{ width:100%; height:100%; object-fit:cover; }
+.thero__lane{ position:absolute; left:-18%; right:0; bottom:7%; height:clamp(1.1rem,2vw,1.75rem); background:var(--fill); }
+.thero__lane::after{ content:''; position:absolute; left:0; right:0; top:50%; height:3px; margin-top:-1.5px; background:repeating-linear-gradient(90deg, rgba(255,255,255,.9) 0 40px, transparent 40px 80px); }
+.thero__bus{ position:absolute; left:-16%; bottom:calc(7% + clamp(.5rem,1vw,.9rem)); width:74%; filter:drop-shadow(0 24px 22px rgba(var(--ink-rgb),.3)); transform:translateX(-60px); transition:transform 1.4s cubic-bezier(.16,.8,.22,1) .2s; }
+.thero.is-in .thero__bus{ transform:none; }
+@media (max-width:900px){
+  .thero__grid{ grid-template-columns:1fr; }
+  .thero__media{ margin-right:calc(-1 * var(--gut)); margin-top:.5rem; }
+  .thero__bus{ left:-4%; width:78%; }
+  .thero__lane{ left:-4%; }
+  .thero__photo{ aspect-ratio:4/3.2; }
+}
+@media (max-width:640px){ .thero{ padding-top:6.25rem; } .thero__h1{ font-size:clamp(2.5rem,12vw,3.5rem); } }
+@media (prefers-reduced-motion:reduce){ .thero__bus{ transition:none; transform:none; } }
+.thero__bus{ left:-3%; width:66%; bottom:calc(7% + clamp(.4rem,.8vw,.8rem)); }
+.thero__lane{ left:-6%; }
+@media (max-width:900px){ .thero__bus{ left:-2%; width:74%; } .thero__lane{ left:-2%; } }
