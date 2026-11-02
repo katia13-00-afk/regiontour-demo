@@ -177,7 +177,7 @@
       requestAnimationFrame(function () { requestAnimationFrame(function () { hero.classList.add('is-in'); }); });
       pills.forEach(function (p, i) { p.classList.remove('is-on'); setTimeout(function () { p.classList.add('is-on'); }, reduce ? 0 : 900 + i * 140); });
     }
-    heads = reduce ? [] : $$('.h2', R).concat($$('.h2', $('#заявка') || document.createElement('i')));
+    heads = [];
     heads.forEach(splitWords);
     $$('.rv', R).forEach(function (el) { if (io) io.observe(el); else el.classList.add('in'); });
     $$('.stat__num', R).forEach(function (el) { if (io2) io2.observe(el); });

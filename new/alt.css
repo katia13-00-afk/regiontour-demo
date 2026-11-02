@@ -1266,3 +1266,161 @@ h1, h2, h3, .stat__num, .pass__city, .mnav a, .hd__logo b{ font-family:var(--fon
 .thero__bus{ left:-3%; width:66%; bottom:calc(7% + clamp(.4rem,.8vw,.8rem)); }
 .thero__lane{ left:-6%; }
 @media (max-width:900px){ .thero__bus{ left:-2%; width:74%; } .thero__lane{ left:-2%; } }
+
+/* v8 — «Транспорт»: фото внутри сетки (не уходит за край экрана), автобус стоит на дороге внутри фото */
+.thero__grid{ grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(2rem,5vw,5rem); }
+.thero__h1{ font-size:clamp(2.75rem,5vw,5.25rem); max-width:13ch; }
+.thero__media{ margin-right:0; }
+.thero__photo{ aspect-ratio:5/4; border-radius:clamp(1.25rem,2.4vw,2rem); box-shadow:0 40px 70px -45px rgba(var(--ink-rgb),.5); }
+.thero__lane{ left:0; right:0; bottom:9%; height:clamp(1rem,1.8vw,1.5rem); }
+.thero__bus{ left:-9%; bottom:calc(9% + clamp(.35rem,.7vw,.7rem)); width:62%; }
+@media (max-width:900px){
+  .thero__media{ margin-right:0; }
+  .thero__bus{ left:-3%; width:68%; }
+  .thero__lane{ left:0; }
+  .thero__photo{ aspect-ratio:4/3.1; }
+}
+
+/* v8 — «Как мы работаем»: ровный ряд шагов вместо лесенки */
+.lad{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(1rem,2.2vw,2rem); counter-reset:none; }
+.lad li{ display:flex; flex-direction:column; align-items:flex-start; gap:.9rem; margin-left:0; padding:1.5rem 1.5rem 1.75rem; border:0; border-radius:var(--r); background:rgba(255,255,255,.7); }
+.lad li > div{ display:flex; flex-direction:column; gap:.5rem; }
+.lad__n{ font-size:clamp(2.75rem,4.5vw,4rem); line-height:1; letter-spacing:-.05em; color:var(--fill); }
+.lad h3{ font-size:clamp(1.25rem,1.7vw,1.5rem); line-height:1.2; margin:0; color:var(--navy-t); }
+.lad p{ font-size:1.0625rem; line-height:1.5; max-width:none; color:var(--navy-t2); }
+@media (max-width:1040px){ .lad{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:640px){ .lad{ grid-template-columns:1fr; } .lad li{ flex-direction:row; align-items:flex-start; gap:1rem; padding:1.25rem; } .lad__n{ font-size:2.5rem; min-width:3.25rem; } }
+/* v9 — «Транспорт»: фото на весь первый экран, как на главной и в «Турах» */
+.hero--transport .hero__h1{ max-width:12ch; }
+.hero--transport .hero__bus{ width:clamp(16rem,36vw,34rem); }
+.hero--transport::before{ background:
+  linear-gradient(90deg, rgba(var(--tint),.5) 0%, rgba(var(--tint),.28) 34%, rgba(var(--tint),0) 58%),
+  linear-gradient(180deg, rgba(var(--tint),.18) 0%, rgba(var(--tint),0) 30%); }
+.hero--transport .hero__lead{ max-width:34rem; font-size:clamp(1.0625rem,1.25vw,1.1875rem); text-shadow:0 1px 12px rgba(0,0,0,.6); }
+
+/* =====================================================================
+   v10 — ЕДИНАЯ СИСТЕМА (перекрывает все прежние заплатки)
+   Белый фон + один светлый нейтральный для чередования. Бирюза — только
+   кнопки, цифры, иконки и фирменная дорога. Без «листов», наклонов,
+   перфорации, штрихкодов и билетов. Один тип первого экрана — фото во всю ширину.
+   ===================================================================== */
+[data-pal="g-teal"]{ --ink:#1F2F38; --ink-rgb:31,47,56; --ink-2:#56666E; --line:rgba(31,47,56,.12); --soft:#F3F6F6; --paper:#F3F6F6;
+  --fill:#0A8F9C; --fill-d:#077985; --dark:#F3F6F6; --navy-t:#1F2F38; --navy-t2:#56666E; --foot:#F3F6F6; --foot-text:#56666E; --foot-muted:#7C8A90; }
+body{ background:#fff; color:var(--ink); }
+
+/* ---- секции: ровные полосы, без скруглённых «листов» ---- */
+.sec, .sec--ink, .sec--sky, .sec--sand, .sec--order, .sec--route, .sec--show, .ft,
+.sec--ink + .sec, .sec--sky + .sec, .sec--sand + .sec, .sec--order + .sec, .rt-story + .sec{ margin-top:0 !important; border-radius:0 !important; }
+.sec{ background:#fff; padding-block:clamp(4.5rem,8vw,7rem); }
+.sec--ink + .sec, .sec--sky + .sec, .sec--sand + .sec, .sec--order + .sec, .rt-story + .sec{ padding-top:clamp(4.5rem,8vw,7rem); }
+.sec--ink, .sec--sky, .sec--sand, .sec--order, .sec--show{ background:var(--soft); }
+.sec--tight{ padding-top:0; }
+.rt-story{ margin-bottom:0; background:#fff; }
+
+/* ---- типографика: заголовки спокойнее, текст крупнее ---- */
+.h2, .h2--long, .sec--ink .h2, .h2--light, .sec--order .h2{ font-size:clamp(2rem,3.4vw,3rem); line-height:1.08; letter-spacing:-.03em; font-weight:700; color:var(--ink); max-width:22ch; margin-bottom:clamp(1.75rem,3vw,2.75rem); }
+.h2 .w{ opacity:1 !important; }
+.sec__lead{ margin:-.75rem 0 clamp(2rem,3vw,2.75rem); font-size:1.125rem; color:var(--ink-2); max-width:44rem; }
+h3{ color:var(--ink); }
+p{ color:inherit; }
+.sec--ink .sec__lead{ color:var(--ink-2); }
+
+/* ---- первый экран: один тип на всех страницах ---- */
+.hero, .hero--page{ min-height:min(100svh,56rem); padding-bottom:0; }
+.hero--page{ min-height:min(88svh,50rem); }
+.hero::before, .hero--transport::before{ background:
+  linear-gradient(90deg, rgba(10,22,28,.5) 0%, rgba(10,22,28,.28) 36%, rgba(10,22,28,0) 62%),
+  linear-gradient(0deg, rgba(10,22,28,.22) 0%, rgba(10,22,28,0) 30%); }
+.hero__in{ padding-top:clamp(8rem,18vh,11rem); }
+.hero__h1, .hero--page .hero__h1, .hero--transport .hero__h1{ font-size:clamp(2.6rem,5.2vw,4.75rem); line-height:1.02; letter-spacing:-.035em; font-weight:700; max-width:14ch; text-shadow:0 2px 24px rgba(0,0,0,.25); }
+.hero__row, .hero--page .hero__row{ flex-direction:column; align-items:flex-start; gap:1.75rem; max-width:36rem; margin-top:1.5rem; }
+.hero__lead, .hero--transport .hero__lead{ font-size:clamp(1.0625rem,1.3vw,1.25rem); line-height:1.5; max-width:34rem; color:#fff; text-shadow:0 1px 14px rgba(0,0,0,.45); }
+.mark svg{ display:none; }
+.hero__bus{ bottom:clamp(1rem,3vw,2.5rem); width:clamp(15rem,30vw,30rem); }
+.hero__obj.hero__bus{ width:clamp(15rem,30vw,30rem); }
+.hero--school .hero__obj, .hero--corp .hero__obj{ width:clamp(9rem,15vw,14rem); right:clamp(2rem,8vw,8rem); }
+
+/* ---- кнопки ---- */
+.btn{ border-radius:12px; }
+.btn--orange, .btn--ink, .sec--ink .btn--orange, .boarding .btn--orange, .mnav .btn--orange{ background:var(--fill); color:#fff; }
+.btn--orange:hover, .btn--ink:hover, .sec--ink .btn--orange:hover, .boarding .btn--orange:hover{ background:var(--fill-d); }
+.hero .btn--orange{ background:#fff; color:var(--ink); }
+.hero .btn--orange > svg{ background:var(--fill); color:#fff; }
+.hero .btn--glass{ background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.6); color:#fff; }
+
+/* ---- карточки услуг: без номеров, заголовок по размеру ---- */
+.offer__no{ display:none; }
+.offer{ border-radius:16px; }
+.offer h3, .offers--3 .offer h3, .offers--4 .offer h3{ font-size:clamp(1.5rem,2.2vw,2.125rem); line-height:1.08; max-width:18ch; }
+.offer__shade{ background:linear-gradient(180deg, rgba(10,22,28,0) 35%, rgba(10,22,28,.68) 100%); }
+.offer .offer__tags{ color:rgba(255,255,255,.82); }
+
+/* ---- цифры ---- */
+.sec--ink .stat__num, .sec--ink .stat:nth-child(even) .stat__num, .stat__num{ color:var(--fill); font-weight:700; }
+.sec--ink .stat__lbl, .stat__lbl{ color:var(--ink-2); }
+.sec--ink .stat p, .stat p{ color:var(--ink-2); }
+.stat::before{ display:none; }
+.sec--ink .stat, .sec--ink .stat + .stat, .sec--ink .stat:nth-child(3), .sec--ink .stat:nth-child(n+3){ border-top-color:var(--line); }
+
+/* ---- популярные туры: обычные карточки вместо марок ---- */
+.stamp, .stamp.rv.in, .stamp:hover{ transform:none !important; }
+.stamp:hover .stamp__img img{ transform:scale(1.04); }
+.stamp__frame{ -webkit-mask:none !important; mask:none !important; padding:0; background:none; filter:none; border-radius:16px; overflow:hidden; margin-bottom:1rem; }
+.stamp__img{ aspect-ratio:4/3.3; }
+.stamp__val{ display:none; }
+.stamp h3{ font-size:clamp(1.2rem,1.5vw,1.375rem); }
+.note{ background:#fff; border:1px solid var(--line) !important; border-radius:16px; }
+
+/* ---- отзывы: ровные карточки ---- */
+.review, .review.rv.in{ transform:none !important; border-radius:16px; padding:0 0 1.5rem; overflow:hidden; box-shadow:none; border:1px solid var(--line); }
+.review__photo{ margin:0 0 1.1rem; border-radius:0; }
+.review > :not(.review__photo){ margin-inline:1.25rem; }
+.review__more{ color:var(--fill); }
+
+/* ---- контакты: белые карточки с бирюзовой полосой ---- */
+.pass{ -webkit-mask:none !important; mask:none !important; border:1px solid var(--line); border-top:4px solid var(--fill); box-shadow:none; border-radius:16px; }
+.pass__top, .pass:nth-child(1) .pass__top, .pass:nth-child(2) .pass__top, .pass:nth-child(3) .pass__top{ background:#fff !important; color:var(--ink) !important; padding:1.4rem 1.6rem .4rem; }
+.pass__city{ color:var(--ink); }
+.pass__bus{ display:none; }
+.pass dl{ border-top:0; padding-top:1rem; }
+
+/* ---- форма: без посадочного талона и штрихкода ---- */
+.boarding{ -webkit-mask:none !important; mask:none !important; grid-template-columns:1fr; border-radius:20px; border:1px solid var(--line); box-shadow:none; overflow:hidden; }
+.stub__code, .stub__brand{ display:none !important; }
+.boarding__stub{ border:0 !important; padding:0 clamp(1.75rem,3.5vw,3rem) clamp(1.75rem,3.5vw,3rem); flex-direction:row; justify-content:flex-start; background:#fff; }
+.boarding__stub .btn{ width:auto !important; flex:0 0 auto; }
+
+/* ---- прочие карточки на светлом фоне ---- */
+.feat, .aud, .lad li, .chips2 li, .bus{ background:#fff; border:1px solid var(--line); }
+.feat h3, .lad h3, .board__dest{ color:var(--ink); }
+.feat p, .lad p{ color:var(--ink-2); }
+.doc, .doc:nth-child(odd), .doc:nth-child(even){ transform:none !important; }
+.yrs__y, .yrs li.in .yrs__y{ color:var(--ink) !important; -webkit-text-stroke:0 !important; font-size:clamp(2.5rem,5vw,4rem); }
+.yrs li:last-child .yrs__y, .yrs li:last-child.in .yrs__y{ color:var(--fill) !important; }
+.poster, .reel__card{ transform:none; }
+.faq summary i{ border-color:var(--line); }
+
+/* ---- подвал ---- */
+.ft{ background:var(--soft); border-top:1px solid var(--line); }
+
+@media (max-width:640px){
+  .hero, .hero--page{ min-height:auto; padding-bottom:0; }
+  .hero__in{ padding-top:7rem; }
+  .hero__h1, .hero--page .hero__h1{ font-size:clamp(2.25rem,10vw,3rem); }
+  .hero__row{ max-width:none; }
+  .hero::before{ background:linear-gradient(180deg, rgba(10,22,28,.45) 0%, rgba(10,22,28,.3) 55%, rgba(10,22,28,.1) 100%); }
+  .hero--school .hero__obj, .hero--corp .hero__obj{ width:7rem; right:1rem; }
+  .h2{ font-size:clamp(1.75rem,8vw,2.25rem); }
+  .boarding__stub .btn{ width:100% !important; }
+}
+/* v10 — доводка */
+.rt-story__title{ max-width:var(--wrap) !important; text-align:left; }
+.row__no, .board__no, .reel__no{ display:none; }
+.row{ grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) clamp(8rem,13vw,11rem); }
+.board li{ grid-template-columns:minmax(0,1fr) 2rem; }
+.seg label{ border-radius:12px; }
+.seg input:checked + label{ background:var(--fill); border-color:var(--fill); color:#fff; }
+.aud .tile{ background:#E6F5F7; }
+.f input{ border-radius:12px; }
+@media (max-width:1040px){ .row{ grid-template-columns:minmax(0,1fr) clamp(7rem,18vw,10rem); } .row p{ grid-column:1; grid-row:2; } .row__img{ grid-column:2; grid-row:1 / span 2; } }
+@media (max-width:640px){ .row{ grid-template-columns:1fr; } .row p{ grid-column:1; } .row__img{ grid-column:1; grid-row:auto; } }
