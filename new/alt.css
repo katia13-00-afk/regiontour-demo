@@ -1530,3 +1530,78 @@ body{ font-size:1rem; }
 }
 .sec--sky .bus, .bus, .sec--sky .bus .bus__body{ background:#fff; }
 .row, .row h3, .row p{ text-align:left; }
+
+/* ---- популярные туры: фотокарточки, без цветных подложек ---- */
+.stamp__img, .stamp:nth-child(n) .stamp__img{ background:#ECEDED; aspect-ratio:4/4.6; }
+.stamp__img img{ width:100%; height:100%; object-fit:cover; filter:none; }
+.stamp__frame{ border-radius:20px; }
+.stamp__img--cut img{ object-fit:contain; width:82%; height:82%; filter:drop-shadow(0 14px 14px rgba(var(--ink-rgb),.2)); }
+
+/* ---- причёсываем: компактные кнопки с кружком (как в референсе), мягкие карточки без теней ---- */
+:root{ --rb:999px; }
+.btn{ border-radius:999px; min-height:2.75rem; padding:0 .3rem 0 1.35rem; gap:1.5rem; justify-content:space-between;
+  font-size:.875rem; font-weight:500; letter-spacing:0; box-shadow:none !important; }
+.btn--lg{ min-height:3rem; padding-left:1.5rem; font-size:.9375rem; }
+.btn > svg{ box-sizing:content-box; width:.85rem; height:.85rem; padding:.5rem; border-radius:50%; flex:none; transform:none;
+  background:#fff; color:var(--ink); }
+.btn:hover > svg{ transform:translateX(2px); }
+.btn--orange, .btn--ink{ background:var(--ink); color:#fff; }
+.btn--orange:hover, .btn--ink:hover{ background:#000; }
+.btn--orange > svg, .btn--ink > svg, .btn--ink:hover > svg{ background:#fff; color:var(--ink); }
+.hero .btn--orange, .sec--ink .btn--orange, .mnav .btn--orange{ background:#fff; color:var(--ink); }
+.hero .btn--orange:hover, .sec--ink .btn--orange:hover{ background:#F2F2F2; }
+.hero .btn--orange > svg, .sec--ink .btn--orange > svg, .mnav .btn--orange > svg{ background:var(--ink); color:#fff; }
+.btn--glass{ background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.5); color:#fff; }
+.btn--glass > svg{ background:#fff; color:var(--ink); }
+.hd__cta svg, .fab svg{ background:var(--ink); color:#fff; }
+
+/* карточки: ровный мягкий серый, без рамок и теней */
+.sec--sky .bus, .bus, .review, .pass, .tile, .note, .stat, .row{ box-shadow:none !important; }
+.note{ background:#F3F3F2; border:0 !important; border-radius:20px; }
+.stamp__frame{ border-radius:20px; }
+.stamp__img{ background:#F3F3F2; }
+
+/* единая система: кнопки и выбранные состояния — тёмные, бирюза только акцент в тексте */
+.btn.btn--orange{ background:var(--ink); color:#fff; }
+.btn.btn--orange:hover{ background:#000; }
+.btn.btn--orange > svg{ background:#fff; color:var(--ink); }
+.hero .btn.btn--orange, .sec--ink .btn.btn--orange, .mnav .btn.btn--orange, .hd .btn.btn--orange{ background:#fff; color:var(--ink); }
+.hero .btn.btn--orange > svg, .sec--ink .btn.btn--orange > svg, .mnav .btn.btn--orange > svg, .hd .btn.btn--orange > svg{ background:var(--ink); color:#fff; }
+.seg label{ border-radius:999px; min-height:2.75rem; font-size:.875rem; font-weight:500; border-width:1px; }
+.seg input:checked + label{ background:var(--ink); border-color:var(--ink); color:#fff; }
+.stepper button{ width:2.75rem; height:2.75rem; border-radius:50%; border-width:1px; }
+
+/* ---- возвращаем 3D в карточках туров, фон секций и контакты ---- */
+.stamp__img--cut{ background:#ECEDED; }
+.stamp__img--cut img{ object-fit:contain; width:82%; height:82%; }
+.sec--ink, .sec--sky, .sec--sand, .sec--order, .sec--show{ background:#F3F6F6 !important; }
+.pass{ --pb:var(--fill); }
+.pass__top, .pass:nth-child(1) .pass__top, .pass:nth-child(2) .pass__top, .pass:nth-child(3) .pass__top{ background:#fff !important; color:var(--ink) !important; }
+.pass{ background:#fff !important; border:1px solid var(--line) !important; border-top:4px solid var(--fill) !important; border-radius:16px !important; -webkit-mask:none !important; mask:none !important; }
+.pass__city, .pass__top .pass__city{ color:var(--ink) !important; }
+.pass__bus{ display:none !important; }
+
+/* ---- жирность: жирным остаются только заголовки (600), остальное 400–500 ---- */
+h1, h2, .h2, .hero__h1{ font-weight:600; }
+h3, h4, summary, .stamp h3, .bus h3{ font-weight:600; }
+summary, .faq summary{ font-weight:500; }
+b, strong, small, .stat__num, .yrs__y, .reel__no, .offer__no, .board__no, .board__dest, .lad__n, .sbig__n, .row__no,
+.bus__kind, .pill, .pill.is-on, .sr__tab, .stamp__val, .review__name, .review__more, .hd__cta, .mark, label, .lbl, output, li.rv{ font-weight:500; }
+.rt-story__text, .rt-story__text.is-active{ font-weight:500; }
+.rt-story__count b, .rt-story__text .yr, .yr{ font-weight:600; }
+.bus__seats b, .stat__num{ font-weight:600; }
+.btn, .btn--orange, a.btn{ font-weight:500; }
+.hd__nav a{ font-weight:500; }
+
+/* ---- контакты: спокойные серые карточки ---- */
+.passes{ counter-reset:pass; }
+.pass{ counter-increment:pass; background:#F3F6F6 !important; border:0 !important; border-radius:20px !important; padding:2rem 2rem 1.5rem; box-shadow:none !important; }
+.pass:hover{ transform:none; }
+.pass__top, .pass:nth-child(n) .pass__top{ background:transparent !important; padding:0 0 1.5rem !important; display:flex; align-items:baseline; justify-content:space-between; }
+.pass__top::after{ content:'0' counter(pass); font-size:.875rem; font-weight:500; color:var(--ink-2); letter-spacing:.04em; }
+.pass__city{ font-size:clamp(1.5rem,2vw,1.875rem); font-weight:600; letter-spacing:-.025em; color:var(--ink) !important; }
+.pass dl{ padding:0 !important; gap:0; }
+.pass dt{ font-size:.75rem; font-weight:500; letter-spacing:.1em; color:var(--ink-2); margin:0; padding-top:1.1rem; border-top:1px solid rgba(var(--ink-rgb),.12); }
+.pass dd{ font-weight:500; font-size:1rem; padding-bottom:1rem; }
+.pass dd a{ font-weight:500; font-size:1rem; min-height:2rem; line-height:2rem; }
+.pass dd:last-child{ padding-bottom:0; }
