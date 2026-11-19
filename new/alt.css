@@ -1642,3 +1642,21 @@ b, strong, small, .stat__num, .yrs__y, .reel__no, .offer__no, .board__no, .board
 /* ---- отзывы: карточки-подложки под фото и текстом ---- */
 .review, .review.rv.in{ background:#F4F4F3 !important; box-shadow:0 1px 2px rgba(var(--ink-rgb),.08), 0 22px 40px -22px rgba(var(--ink-rgb),.35) !important; border:0 !important; border-radius:10px !important; padding:.9rem .9rem 1.4rem !important; }
 .review__photo{ border-radius:4px; }
+
+/* Выбор номера в шапке и в плавающей кнопке */
+.phone-choice{ position:relative; flex:none; }
+.phone-choice > summary{ list-style:none; cursor:pointer; }
+.phone-choice > summary::-webkit-details-marker{ display:none; }
+.phone-choice > summary.hd__cta{ min-width:3.4rem; }
+.phone-choice__links{
+  position:absolute; z-index:51; right:0; top:calc(100% + .5rem);
+  display:grid; min-width:max-content; padding:.35rem; border-radius:12px;
+  background:#fff; color:var(--ink); box-shadow:0 8px 28px rgba(0,0,0,.16);
+}
+.phone-choice__links a{ display:block; padding:.75rem; text-decoration:none; }
+.phone-choice__links a:hover, .phone-choice__links a:focus-visible{ background:#f4f4f4; }
+.phone-choice:not([open]) > .phone-choice__links{ display:none; }
+.phone-choice:has(> .fab) > .phone-choice__links{
+  position:fixed; inset:auto var(--gut) calc(max(1rem, env(safe-area-inset-bottom)) + 4rem) auto;
+}
+.phone-choice:has(> .fab:not(.is-on)) > .phone-choice__links{ display:none; }
