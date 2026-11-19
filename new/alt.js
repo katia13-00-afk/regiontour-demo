@@ -180,7 +180,7 @@
     heads = [];
     heads.forEach(splitWords);
     $$('.rv', R).forEach(function (el) { if (io) io.observe(el); else el.classList.add('in'); });
-    $$('.stat__num', R).forEach(function (el) { if (io2) io2.observe(el); });
+    $$('.stat__num', R).forEach(function (el) { if (io2 && !document.body.classList.contains('pg-about')) io2.observe(el); });
     $$('.review', R).forEach(function (r) {
       var p = $('.review__text', r), b = $('.review__more', r);
       if (!p || !b || b.dataset.bound) return;
@@ -234,4 +234,33 @@
       setTimeout(function () { label.textContent = text; btn.disabled = false; }, 3500);
     });
   });
+})();
+
+// Цифры на странице компании меняются по мере прокрутки секции.
+(function () {
+  var section = document.querySelector('.pg-about .stats');
+  function updateAboutStats() {
+    if (!document.body.classList.contains('pg-about')) return;
+    section = document.querySelector('.page.is-active .stats') ||
+      Array.from(document.querySelectorAll('.stats')).find(function (el) {
+        return el.getClientRects().length > 0;
+      });
+    if (!section) return;
+    var rect = section.getBoundingClientRect();
+    var progress = Math.max(0, Math.min(1, (innerHeight * .85 - rect.top) / (innerHeight * .45)));
+    section.querySelectorAll('[data-num]').forEach(function (el) {
+      var original = el.dataset.num;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.textContent = original;
+        return;
+      }
+      el.textContent = original.replace(/\d[\d ]*/g, function (number) {
+        var value = Math.round(Number(number.replace(/ /g, '')) * progress);
+        return number.includes(' ') ? value.toLocaleString('ru-RU') : String(value);
+      });
+    });
+  }
+  window.addEventListener('scroll', updateAboutStats, {passive:true});
+  window.addEventListener('resize', updateAboutStats);
+  window.addEventListener('hashchange', updateAboutStats);
 })();

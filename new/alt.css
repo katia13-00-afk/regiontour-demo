@@ -1660,3 +1660,6 @@ b, strong, small, .stat__num, .yrs__y, .reel__no, .offer__no, .board__no, .board
   position:fixed; inset:auto var(--gut) calc(max(1rem, env(safe-area-inset-bottom)) + 4rem) auto;
 }
 .phone-choice:has(> .fab:not(.is-on)) > .phone-choice__links{ display:none; }
+
+/* Заголовок блока статистики без случайного переноса. */
+.pg-about .sec--ink .wrap:has(> .stats) > .h2{ max-width:none; white-space:nowrap; }
