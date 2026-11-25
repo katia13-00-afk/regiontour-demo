@@ -74,16 +74,29 @@
   function placePills() {
     if (!road || !road.getTotalLength) return;
     var svg = road.ownerSVGElement, box = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal;
-    if (!box.width) return;
-    var vis = pills.filter(function (p) { return p.offsetParent; }), n = vis.length, L = road.getTotalLength();
-    vis.forEach(function (p, k) {
-      var narrow = innerWidth < 640, from = narrow ? 0.24 : 0.06, span = narrow ? 0.4 : 0.58;
-      var at = L * (from + span * (k / Math.max(1, n - 1)));
-      var a = road.getPointAtLength(at), b = road.getPointAtLength(Math.min(L, at + 4));
-      var x = a.x / vb.width * box.width, y = a.y / vb.height * box.height;
-      var ang = Math.atan2((b.y - a.y) / vb.height * box.height, (b.x - a.x) / vb.width * box.width) * 180 / Math.PI;
-      if (narrow) ang = Math.max(-12, Math.min(12, ang));
-      p.style.left = x + 'px'; p.style.top = y + 'px'; p.style.setProperty('--rot', ang.toFixed(1) + 'deg');
+    if (innerWidth <= 1320 || !box.width || !pills.length) return;
+    var bus = $('.hero__bus', hero);
+    var start = parseFloat(getComputedStyle($('.hero__in', hero)).paddingLeft);
+    var available = bus.offsetLeft - start - 16;
+    var totalWidth = pills.reduce(function (sum, p) { return sum + p.offsetWidth; }, 0);
+    var gap = (available - totalWidth) / Math.max(1, pills.length - 1);
+    var length = road.getTotalLength(), left = start;
+    pills.forEach(function (p) {
+      var center = left + p.offsetWidth / 2;
+      var target = center * vb.width / box.width;
+      var low = 0, high = length;
+      for (var i = 0; i < 14; i++) {
+        var mid = (low + high) / 2;
+        if (road.getPointAtLength(mid).x < target) low = mid;
+        else high = mid;
+      }
+      var point = road.getPointAtLength(high);
+      var next = road.getPointAtLength(Math.min(length, high + 4));
+      var angle = Math.atan2((next.y - point.y) * box.height / vb.height, (next.x - point.x) * box.width / vb.width) * 180 / Math.PI;
+      p.style.left = center + 'px';
+      p.style.top = point.y * box.height / vb.height + 'px';
+      p.style.setProperty('--rot', Math.max(-12, Math.min(12, angle)) + 'deg');
+      left += p.offsetWidth + gap;
     });
   }
   window.addEventListener('resize', placePills);
