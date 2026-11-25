@@ -180,7 +180,7 @@ p{ margin:0; text-wrap:pretty; }
 .review__name{ display:block; font-size:1.25rem; font-weight:800; letter-spacing:-.02em; margin:0 .4rem .5rem; }
 .review__text{ margin:0 .4rem; color:var(--ink-2); display:-webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical; overflow:hidden; }
 .review.is-open .review__text{ display:block; -webkit-line-clamp:unset; }
-.review__more{ margin:.6rem .4rem 0; padding:0; min-height:2.75rem; border:0; background:none; font:700 1rem 'Manrope',sans-serif; color:var(--accent2-ink); cursor:pointer; text-decoration:underline; text-underline-offset:4px; }
+.review__more{ margin:.6rem .4rem 0; padding:0; min-height:2.75rem; border:0; background:none; font:700 1rem 'Manrope',sans-serif; color:var(--accent2-ink); cursor:pointer; text-decoration:none; }
 
 /* ---------- вопросы ---------- */
 .faq{ display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(2rem,6vw,6rem); align-items:start; }
@@ -701,10 +701,6 @@ h1, h2, h3, .stat__num, .pass__city, .mnav a, .hd__logo b{ font-family:var(--fon
 .hd__nav{ margin-inline:auto; gap:.15rem; }
 .hd__nav a, .hd.is-solid .hd__nav a{ position:relative; padding:.55rem .7rem; border-radius:10px; background:none; color:var(--ink); opacity:1; font-weight:600; }
 .hd__nav a:hover, .hd.is-solid .hd__nav a:hover, .hd__nav a[aria-current], .hd.is-solid .hd__nav a[aria-current]{ background:none; color:var(--ink); }
-.hd__nav a::after{ content:''; position:absolute; left:.7rem; right:.7rem; bottom:.3rem; height:2px; border-radius:2px; background:var(--ink);
-  transform:scaleX(0); transform-origin:right; transition:transform .45s var(--ease); }
-.hd__nav a:hover::after{ transform:scaleX(1); transform-origin:left; }
-.hd__nav a[aria-current]::after{ transform:scaleX(1); background:var(--fill); }
 .hd__cta{ display:flex; align-items:center; gap:1rem; height:3.75rem; padding:0 .55rem 0 1.3rem; border-radius:16px; background:var(--ink); color:#fff;
   text-decoration:none; font-weight:700; white-space:nowrap; flex:none; box-shadow:0 10px 30px -20px rgba(0,0,0,.6); transition:background .3s; }
 .hd__cta:hover{ background:#000; }
@@ -712,7 +708,7 @@ h1, h2, h3, .stat__num, .pass__city, .mnav a, .hd__logo b{ font-family:var(--fon
 .hd__cta:hover svg{ transform:rotate(-14deg) scale(1.06); }
 .hd__burger, .hd.is-solid .hd__burger{ width:2.75rem; height:2.75rem; border-radius:12px; background:var(--ink); }
 .hd__burger i, .hd.is-solid .hd__burger i{ background:#fff; }
-@media (max-width:1180px){ .hd__nav a, .hd.is-solid .hd__nav a{ padding:.55rem .5rem; font-size:.875rem; } .hd__nav a::after{ left:.5rem; right:.5rem; } }
+@media (max-width:1180px){ .hd__nav a, .hd.is-solid .hd__nav a{ padding:.55rem .5rem; font-size:.875rem; } }
 @media (max-width:1180px){ .hd__burger{ display:block; margin-left:auto; } }
 @media (max-width:640px){
   .hd__bar, .hd__cta{ height:3.4rem; border-radius:14px; }
@@ -740,11 +736,8 @@ h1, h2, h3, .stat__num, .pass__city, .mnav a, .hd__logo b{ font-family:var(--fon
   .fab svg{ order:2; box-sizing:content-box; width:1rem; height:1rem; padding:.75rem; border-radius:50%; background:var(--accent); color:var(--ink); }
 }
 
-/* ---- ссылки: подчёркивание вырастает слева ---- */
-.ft a{ background:linear-gradient(currentColor,currentColor) 0 78%/0 1px no-repeat; transition:background-size .45s var(--ease), color .3s; }
-.ft a:hover{ background-size:100% 1px; color:#fff; }
-.ft .hd__logo{ background:none; }
-.consent a{ text-decoration:none; background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat; }
+a{ text-decoration:none; }
+.ft a{ transition:color .25s; }
 
 /* ---- секции-«листы»: цветные блоки наезжают на предыдущий скруглённым краем ---- */
 .sec{ background:var(--paper); }
@@ -847,7 +840,7 @@ h1, h2, h3, .stat__num, .pass__city, .mnav a, .hd__logo b{ font-family:var(--fon
 .reel__card p{ color:var(--ink-2); font-size:.96875rem; line-height:1.5; }
 
 /* ---------- туры: табло отправлений ---------- */
-.board{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; column-gap:clamp(2rem,5vw,4rem); border-bottom:1px solid rgba(255,255,255,.14); }
+.board{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; column-gap:clamp(2rem,5vw,4rem); }
 .board li{ display:grid; grid-template-columns:3rem minmax(0,1fr) 2rem; gap:1rem; align-items:center; padding:1.2rem .25rem; border-top:1px solid rgba(255,255,255,.14); transition:background .3s, padding .4s var(--ease); }
 .board__no{ color:var(--accent); font-weight:700; font-variant-numeric:tabular-nums; }
 .board__dest{ font-size:clamp(1.125rem,1.7vw,1.5rem); font-weight:700; letter-spacing:-.025em; color:#fff; line-height:1.25; }
@@ -1039,7 +1032,6 @@ h1, h2, h3, .stat__num, .pass__city, .mnav a, .hd__logo b{ font-family:var(--fon
 .sec--ink .btn--orange{ background:var(--ink); color:#fff; }
 .sec--ink .btn--orange:hover{ background:#000; }
 .sec--ink .btn--orange > svg{ background:var(--accent); color:var(--ink); }
-.board{ border-bottom-color:rgba(var(--ink-rgb),.16); }
 .board li{ border-top-color:rgba(var(--ink-rgb),.16); }
 .board__no{ color:var(--fill); }
 .board__dest{ color:var(--ink); }
@@ -1325,7 +1317,7 @@ p{ color:inherit; }
 .sec--ink .sec__lead{ color:var(--ink-2); }
 
 /* ---- первый экран: один тип на всех страницах ---- */
-.hero, .hero--page{ min-height:min(100svh,56rem); padding-bottom:0; }
+.hero, .hero--page{ min-height:min(100svh,56rem); padding-bottom:0; border-radius:0 0 clamp(16px, 2vw, 28px) clamp(16px, 2vw, 28px); }
 .hero--page{ min-height:min(88svh,50rem); }
 .hero::before, .hero--transport::before{ background:
   linear-gradient(90deg, rgba(10,22,28,.5) 0%, rgba(10,22,28,.28) 36%, rgba(10,22,28,0) 62%),
@@ -1617,9 +1609,14 @@ b, strong, small, .stat__num, .yrs__y, .reel__no, .offer__no, .board__no, .board
 /* плашка-примечание на сером фоне секции — белая, чтобы не сливалась */
 .sec--sky .note, .sec--sand .note, .sec--ink .note, .sec--order .note{ background:#fff; border-radius:20px; padding:clamp(1.5rem,3vw,2.5rem); }
 
-/* корпоративный транспорт: ночное фото светлее, без затемняющего градиента */
-.hero--corp .hero__bg img{ filter:brightness(1.55) contrast(.92) saturate(1.1); }
-.hero--corp::before{ background:linear-gradient(90deg, rgba(10,22,28,.28) 0%, rgba(10,22,28,.1) 40%, rgba(10,22,28,0) 62%); }
+.pg-home .hero::before, .hero--school::before, .hero--corp::before{
+  background:linear-gradient(90deg, rgba(10,22,28,.67), rgba(10,22,28,.48) 36%, rgba(10,22,28,.04) 72%);
+}
+@media (max-width:640px){
+  .pg-home .hero::before, .hero--school::before, .hero--corp::before{
+    background:linear-gradient(180deg, rgba(10,22,28,.52), rgba(10,22,28,.48) 54%, rgba(10,22,28,.08));
+  }
+}
 
 /* ---- контакты: билетики с цветной шапкой и вырезами (цвета из палитры сайта) ---- */
 .pass{ --pb:#0A8F9C; } .pass:nth-child(2){ --pb:#1F2F38; } .pass:nth-child(3){ --pb:#2D6F8E; }
@@ -1678,4 +1675,105 @@ b, strong, small, .stat__num, .yrs__y, .reel__no, .offer__no, .board__no, .board
   .hero__pills .pill{ position:static; transform:none; }
   .hero__btns .btn{ width:auto; min-height:2.75rem; padding-left:1rem; gap:.65rem; }
   .hero__btns{ gap:.5rem; }
+}
+
+.hd .hd__nav a[aria-current="page"], .hd .hd__nav a:hover{ color:var(--fill-d); }
+.consent a:hover, .review__more:hover{ color:var(--ink); }
+@media (min-width:641px){
+  .pg-home .hero::before{ background:linear-gradient(90deg,rgba(13,33,50,.65),rgba(13,33,50,.35) 39%,transparent 69%); }
+}
+
+.school-stops {
+  --stop-gap: clamp(1rem, 2vw, 1.5rem);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--stop-gap);
+  margin: 0;
+  padding: 0;
+}
+.school-stops li { position: relative; }
+.school-stops li:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 2.6rem;
+  right: calc(.6rem - var(--stop-gap));
+  border-top: 1px solid var(--line);
+}
+.school-stop-number {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+.school-stops h3 { margin: 1rem 0 .35rem; font-size: clamp(1.2rem, 2vw, 1.6rem); }
+.school-stops p { margin: 0; color: var(--ink-2); max-width: 30ch; }
+.school-stop-bus { display: block; width: 7.5rem; height: auto; margin-top: .6rem; }
+@media (max-width: 900px) {
+  .school-stops { grid-template-columns: 1fr; gap: 1.5rem; }
+  .school-stops li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: .25rem 1rem; }
+  .school-stops li:not(:last-child)::before {
+    top: 2.35rem; bottom: -1.15rem; left: 1rem; right: auto;
+    border-top: 0; border-left: 1px solid var(--line);
+  }
+  .school-stop-number { grid-column: 1; grid-row: 1 / span 2; }
+  .school-stops h3 { margin: .1rem 0 0; }
+  .school-stops p, .school-stop-bus { grid-column: 2; }
+}
+
+/* Photo prints and corporate transport */
+.stamp:nth-child(n) .stamp__img--cut { background: #fff; }
+
+.corp-services {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  background: var(--soft);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.corp-services__photo {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: 50% 68%;
+}
+.corp-services__list {
+  display: grid;
+  align-content: center;
+  padding: 12px clamp(20px, 3vw, 48px);
+}
+.corp-service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: clamp(16px, 2vw, 30px) 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+.corp-service + .corp-service { border-top: 1px solid var(--line); }
+.corp-service h3 { margin: 0; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.22; }
+.corp-service p { margin: 6px 0 0; color: var(--ink-2); line-height: 1.5; }
+.corp-service svg { width: 20px; height: 20px; flex: none; color: var(--accent-ink); }
+.corp-service:is(:hover, :focus-visible) h3 { color: var(--accent-ink); }
+.corp-service:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; }
+
+#corp-benefits .tile {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--soft);
+  color: var(--accent-ink);
+  border-radius: 10px;
+}
+#corp-benefits .tile svg { width: 2.125rem; height: 2.125rem; }
+@media (max-width: 720px) {
+  .corp-services { grid-template-columns: minmax(0, 1fr); }
+  .corp-services__photo { height: auto; aspect-ratio: 16 / 9; }
+  .corp-services__list { padding-block: 4px; }
 }

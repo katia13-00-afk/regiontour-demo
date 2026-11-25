@@ -95,7 +95,7 @@
       var angle = Math.atan2((next.y - point.y) * box.height / vb.height, (next.x - point.x) * box.width / vb.width) * 180 / Math.PI;
       p.style.left = center + 'px';
       p.style.top = point.y * box.height / vb.height + 'px';
-      p.style.setProperty('--rot', Math.max(-12, Math.min(12, angle)) + 'deg');
+      p.style.setProperty('--rot', angle + 'deg');
       left += p.offsetWidth + gap;
     });
   }
