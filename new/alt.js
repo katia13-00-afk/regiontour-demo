@@ -76,7 +76,8 @@
     var svg = road.ownerSVGElement, box = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal;
     if (innerWidth <= 1320 || !box.width || !pills.length) return;
     var bus = $('.hero__bus', hero);
-    var start = parseFloat(getComputedStyle($('.hero__in', hero)).paddingLeft);
+    var content = $('.hero__in', hero);
+    var start = content.offsetLeft + parseFloat(getComputedStyle(content).paddingLeft);
     var available = bus.offsetLeft - start - 16;
     var totalWidth = pills.reduce(function (sum, p) { return sum + p.offsetWidth; }, 0);
     var gap = (available - totalWidth) / Math.max(1, pills.length - 1);
