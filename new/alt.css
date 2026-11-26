@@ -1652,6 +1652,8 @@ b, strong, small, .stat__num, .yrs__y, .reel__no, .offer__no, .board__no, .board
   background:#fff; color:var(--ink); box-shadow:0 8px 28px rgba(0,0,0,.16);
 }
 .phone-choice__links a{ display:block; padding:.75rem; text-decoration:none; }
+.call-hours{ color:var(--ink-2); font-size:.875rem; line-height:1.5; }
+.phone-choice__links .call-hours{ margin:0; padding:.35rem .75rem .65rem; }
 .phone-choice__links a:hover, .phone-choice__links a:focus-visible{ background:#f4f4f4; }
 .phone-choice:not([open]) > .phone-choice__links{ display:none; }
 .phone-choice:has(> .fab) > .phone-choice__links{
