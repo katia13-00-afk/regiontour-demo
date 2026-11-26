@@ -1053,6 +1053,8 @@ a{ text-decoration:none; }
 .ft h4{ color:var(--foot-muted); }
 .ft a{ color:var(--ink); }
 .ft a:hover{ color:var(--accent-ink); }
+.ft__vk{ gap:.5rem; }
+.ft__vk svg{ flex:none; }
 .ft__legal{ border-top-color:rgba(var(--ink-rgb),.14); }
 .sec--order + .ft, .sec--order ~ .ft{ border-top:0; }
 
