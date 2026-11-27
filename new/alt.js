@@ -26,15 +26,18 @@
         if (a.getAttribute('href') === '#' + pg.dataset.page) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
       });
       initPage();
-      if (!r.el) window.scrollTo(0, 0);
       window.dispatchEvent(new Event('resize'));
     }
-    if (r.el && !first) r.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    else if (r.el) r.el.scrollIntoView();
+    if (r.el) {
+      r.el.scrollIntoView({ behavior: first || reduce ? 'auto' : 'smooth', block: 'start' });
+    } else if (pg) {
+      window.scrollTo(0, 0);
+    }
   }
   if (pages.length) {
     window.addEventListener('hashchange', function () { show(location.hash); });
     document.addEventListener('click', function (e) {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       var a = e.target.closest('a[href^="#"]'); if (!a) return;
       var h = a.getAttribute('href');
       e.preventDefault();
@@ -229,20 +232,17 @@
   });
 
   /* ---------- форма: тот же обработчик send.php, те же поля ---------- */
-  var out = $('#f-people');
-  $$('.stepper button').forEach(function (b) {
-    b.addEventListener('click', function () { var v = Math.max(1, Math.min(99, (+out.textContent || 1) + (+b.dataset.step))); out.textContent = v; });
-  });
+  var people = $('#f-people');
   var form = $('#contactForm');
   if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.reportValidity()) return;
     var btn = $('[type="submit"]', form), label = btn.firstChild, text = label.textContent, g = $('input[name="guide"]:checked', form);
-    $('#rtMessage').value = 'Человек: ' + out.textContent + '; экскурсовод: ' + (g ? g.value : 'Нет');
+    $('#rtMessage').value = 'Человек: ' + people.value + '; экскурсовод: ' + (g ? g.value : 'Нет');
     btn.disabled = true; label.textContent = 'Отправляем...';
     fetch('../send.php', { method: 'POST', body: new FormData(form) }).then(function (r) { return r.json(); }).then(function (j) {
       if (!j.success) throw new Error();
-      label.textContent = 'Заявка отправлена'; form.reset(); out.textContent = '1';
+      label.textContent = 'Заявка отправлена'; form.reset();
     }).catch(function () {
       label.textContent = 'Не отправилось. Позвоните нам или попробуйте ещё раз';
       setTimeout(function () { label.textContent = text; btn.disabled = false; }, 3500);
